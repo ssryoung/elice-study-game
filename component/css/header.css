@@ -2,10 +2,12 @@
     padding: 30px;
 }
 .title p{
+    width: fit-content;
     color: rgb(82, 79, 161);
     font-size: 30px;
     font-weight: bold;
     font-family: 'Yeongdo-Rg';
+    cursor: pointer;
 }
 #like {
 	position:fixed;
