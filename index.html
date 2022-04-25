@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이상한 나라의 게임</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">   
-        $(document).ready( function() {
-        $("#header").load("component/header.html");  
-        });
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#header").load("contents/header.html");
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="pattern-cross-dots-lg mainColor">
-        <div id="header"></div>
-        <div class="buttonWrap">
-            <button class="gameButton" onclick="location.href='#';">룰렛</button>
-            <button class="gameButton" onclick="location.href='#';">Wordle</button>
-            <button class="gameButton" onclick="location.href='#';">같은 그림 맞추기</button>
-            <button class="gameButton" onclick="location.href='#';">제비뽑기</button>
-            <button class="gameButton" onclick="location.href='#';">포켓몬 모으기</button>
-            <button class="gameButton" onclick="location.href='#';">테트리스</button>
-        </div>
-        <footer>
-            <button class="madeButton">
-                <span data-title="예정 다윤 지환 세령 우람 은지">MADE BY</span>
-            </button>
-        </footer>          
+      <div id="header"></div>
+      <div class="buttonWrap">
+        <button class="gameButton" onclick="location.href='#';">룰렛</button>
+        <button class="gameButton" onclick="location.href='#';">Wordle</button>
+        <button class="gameButton" onclick="location.href='#';">
+          같은 그림 맞추기
+        </button>
+        <button class="gameButton" onclick="location.href='#';">
+          제비뽑기
+        </button>
+        <button class="gameButton" onclick="location.href='#';">
+          포켓몬 모으기
+        </button>
+        <button class="gameButton" onclick="location.href='#';">
+          테트리스
+        </button>
+      </div>
+      <footer>
+        <button class="madeButton">
+          <span data-title="예정 다윤 지환 세령 우람 은지">MADE BY</span>
+        </button>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

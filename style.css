@@ -25,7 +25,7 @@
 }
 .buttonWrap{
     width: 65%;
-    height: 45%;
+    height: 300px;
     margin: 0 auto;
     margin-top: 80px;
     justify-content: center;
@@ -84,38 +84,38 @@ button.gameButton:active::before {
 .madeButton {
     position: fixed;
     right: 30px;
-   bottom: 30px;
+	bottom: 30px;
 }
 button.madeButton{
-    width: 13vw;
-   background-color: transparent;  
+    width: 200px;
+	background-color: transparent;  
 }
 button.madeButton span{
     padding: 5px 0;
     font-size: 16px;
-   display: block;
-   position: relative;
-   transition:0.3s ease-in-out all;
-   transform-origin:50% 0;
+	display: block;
+	position: relative;
+	transition:0.3s ease-in-out all;
+	transform-origin:50% 0;
     transform-style:preserve-3d;
-   background-color: rgb(82, 79, 161);
-   color: white;
+	background-color: rgb(82, 79, 161);
+	color: white;
     width: 100%;
 }
 button.madeButton span:after{
     font-size: 14px;
-   display: block;
-   content: attr(data-title);
-   position: absolute;
-   left: 0;
-   top: 0;
-   transition:0.3s ease-in-out all;
-   transform-origin:50% 0;
-   transform:translate3d(0px,105%,0px) rotateX(-90deg);
-   background-color: white;
-   color: rgb(82, 79, 161);
+	display: block;
+	content: attr(data-title);
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition:0.3s ease-in-out all;
+	transform-origin:50% 0;
+	transform:translate3d(0px,105%,0px) rotateX(-90deg);
+	background-color: white;
+	color: rgb(82, 79, 161);
     width: 100%;
 }
 button.madeButton:hover span{
-   transform:translate3d(0px,0px,-30px) rotateX(90deg);
+	transform:translate3d(0px,0px,-30px) rotateX(90deg);
 }
