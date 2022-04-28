@@ -1,5 +1,7 @@
 .title {
     padding: 30px;
+    display: inline-block;
+    cursor: pointer;
 }
 .title p{
     width: fit-content;
@@ -92,4 +94,37 @@
       transform: scale(0.3);
       animation-timing-function: ease-out;
     }
+}
+
+#help {
+    display:inline-block;
+    position:fixed;
+	top: 27px;
+	right: 100px;
+    z-index: 999;
+
+}
+#help > a {
+    font-size:35px;
+    color:var(--colorShadeA);
+    transition:.2s;
+}
+#help > a:hover {
+    color:rgb(82, 79, 161);
+}
+#help .help-box {
+    position:absolute;
+    right:45px;
+    top:45px;
+    width:700px;
+    height:350px;
+    padding:30px;
+    background-color:rgb(195 186 233);
+    border-radius: 30px 0 30px 30px;
+    color:black;
+    font-size:20px;
+    box-shadow: -5px 5px 10px rgba(0,0,0,.15);
+}
+#help .no-box {
+    display:none;
 }

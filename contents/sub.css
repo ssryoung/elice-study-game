@@ -79,50 +79,73 @@ section .game-box .result .btn_again:hover i {
 }
 
 footer#sub_ft {
-  padding: 0 30px;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 100px;
+  width:100%;
+  position:fixed;
+  left:0;
+  bottom:0;
+  height:100px;
 }
 footer#sub_ft > a {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 120px;
-  color: rgba(39, 11, 92, 0.7);
+  font-size:20px;
+  font-weight:600;
+  line-height:120px;
+  color:rgba(39, 11, 92, 0.7);
+  padding:0 30px;
+  position:relative;
 }
 footer#sub_ft > a:hover {
-  color: rgb(156, 113, 255);
+  color:rgb(156, 113, 255);
 }
-
+footer#sub_ft > a:hover span {
+  display:inline-block;
+}
+footer#sub_ft a span {
+  color:#555;
+  font-size:16px;
+  background-color:white;
+  height:30px;
+  padding:0 20px;
+  border-radius: 15px;
+  line-height:30px;
+  text-align:center;
+  margin:0 5px;
+  display:none;
+}
+footer#sub_ft a span.next-name {
+  left:auto;
+  right:15px;
+}
 footer#sub_ft .prev-game {
-  float: left;
+  float:left;
 }
 footer#sub_ft > .prev-game:hover {
-  animation: arrow 1s ease infinite;
+  animation:arrow 1s ease infinite;
 }
 @keyframes arrow {
-  0% {
+  0%{
+
   }
-  50% {
-    margin-left: -10px;
+  50%{
+      margin-left:-10px;
   }
-  100% {
+  100%{
+
   }
 }
 footer#sub_ft .next-game {
-  float: right;
+  float:right;
 }
 footer#sub_ft .next-game:hover {
-  animation: arrow2 1s ease infinite;
+  animation:arrow2 1s ease infinite;
 }
 @keyframes arrow2 {
-  0% {
+  0%{
+
   }
-  50% {
-    margin-right: -10px;
+  50%{
+      margin-right:-10px;
   }
-  100% {
+  100%{
+
   }
 }
