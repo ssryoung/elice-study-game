@@ -1,0 +1,130 @@
+.title {
+    padding: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+.title p{
+    width: fit-content;
+    color: rgb(82, 79, 161);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Yeongdo-Rg';
+    cursor: pointer;
+}
+#like {
+	position:fixed;
+	top: 35px;
+	right: 80px;
+	z-index:999;
+	cursor:pointer;
+}
+.heart-like-button {
+    position: relative;
+    transform: scale(0.3);
+    animation: heartbeat 2.5s ease-in-out infinite both;
+}
+.heart-like-button:before {
+    transform: scale(0.3);
+    position: absolute;
+    top: 0;
+    left: 80px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 80px;
+    height: 125px;
+    border-radius: 40px 40px 0 0;
+    background-color: #b7b7b7;
+    content: "";
+    cursor: pointer;
+    transition:  .4s;
+}
+.heart-like-button:after {
+    transform: scale(0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    width: 80px;
+    height: 125px;
+    border-radius: 40px 40px 0 0;
+    background-color: #b7b7b7;
+    content: "";
+    cursor: pointer;
+    transition:  .4s;
+}
+  
+.heart-like-button.liked::before,
+.heart-like-button.liked::after {
+    background-color: #d65076;
+}
+.heart-like-button.liked {
+    animation: liked .4s ease;
+}
+@keyframes liked {
+    0% {
+        transform: scale(.1);
+    }
+    50% {
+        transform: scale(.4);
+    }
+    100% {
+        transform: scale(.3);
+    }
+}
+@keyframes heartbeat {
+    from {
+      transform: scale(0.3);
+      transform-origin: center center;
+      animation-timing-function: ease-out;
+    }
+    10% {
+      transform: scale(0.26);
+      animation-timing-function: ease-in;
+    }
+    17% {
+      transform: scale(0.28);
+      animation-timing-function: ease-out;
+    }
+    33% {
+      transform: scale(0.25);
+      animation-timing-function: ease-in;
+    }
+    45% {
+      transform: scale(0.3);
+      animation-timing-function: ease-out;
+    }
+}
+
+#help {
+    display:inline-block;
+    position:fixed;
+	top: 27px;
+	right: 100px;
+    z-index: 999;
+
+}
+#help > a {
+    font-size:35px;
+    color:var(--colorShadeA);
+    transition:.2s;
+}
+#help > a:hover {
+    color:rgb(82, 79, 161);
+}
+#help .help-box {
+    position:absolute;
+    right:45px;
+    top:45px;
+    width:700px;
+    height:350px;
+    padding:30px;
+    background-color:rgb(195 186 233);
+    border-radius: 30px 0 30px 30px;
+    color:black;
+    font-size:20px;
+    box-shadow: -5px 5px 10px rgba(0,0,0,.15);
+}
+#help .no-box {
+    display:none;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이상한 나라의 게임</title>
+    <link rel="stylesheet" type="text/css" href="/contents/header.css" />
+
+    <script type="text/javascript">
+      const button = document.querySelector(".heart-like-button");
+
+      button.addEventListener("click", () => {
+        if (button.classList.contains("liked")) {
+          button.classList.remove("liked");
+        } else {
+          button.classList.add("liked");
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="title" onclick="location.href='/index.html';">
+        <div>
+          <p>이상한 나라의 게임</p>
+        </div>
+      </div>
+      <div id="help">
+        <a href="#" onclick="
+            event.preventDefault();
+            document.querySelector('.help-box').classList.toggle('no-box')
+        "><i class="fa-solid fa-circle-question "></i></a>
+        <div class="help-box no-box">
+            ~~아무내용~~
+        </div>
+      </div>
+      <div id="like">
+        <div class="heart-like-button"></div>
+      </div>
+    </header>
+  </body>
+</html>

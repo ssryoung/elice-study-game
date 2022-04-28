@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이상한 나라의 게임</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/contents/sub.css" />
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/1f5f133c98.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#header").load("/contents/header.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="pattern-cross-dots-lg mainColor">
+      <div id="header"></div>
+      <h1 class="game-title">테트리스</h1>
+      <section>
+        <div class="game-box">
+          <!---------------여기에 게임 제작---------------->
+          <div class="result">
+            <p>You win!</p>
+            <p>SCORE <span class="score">100</span></p>
+            <a href="#" class="btn_again"
+              >다시하기 <i class="fa-solid fa-arrow-rotate-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      <footer id="sub_ft">
+        <a href="#" class="prev-game"><i class="fa-solid fa-arrow-left-long"></i> 이전게임
+            <span class="prev-name">포켓몬 모으기</span>
+        </a>
+        <a href="#" class="next-game">
+            <span class="next-name">룰렛</span>
+            다음게임 <i class="fa-solid fa-arrow-right-long"></i></a>
+    </footer>  
+    </div>
+  </body>
+</html>
