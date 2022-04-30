@@ -16,8 +16,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   /* background-color: yellow; */
-  width: 70%;
-  height: 70%;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   /* overflow: hidden; */
 }
@@ -28,23 +28,24 @@
   background: url("https://m.lifeplanet.co.kr:444/commons/slink/administrator/openInnovation/img/MO)%20360%ED%94%8C%EB%9E%98%EB%8B%9B_%EB%A3%B0%EB%A0%9B%ED%8C%90_476x476_201026.png")
     no-repeat;
   background-attachment: fixed;
-  background-position: center;
-  background-size: 95%;
-  /* transform-origin: center;
+  /* background-position: center; */
+  background-size: 100%;
+  /* transform-origin: center; */
+  /* transition: transform ease-in-out; */
   transition-timing-function: ease-in-out;
-  transition: 2s; */
+  transition: 2s;
 }
 
 .roulette-arrow {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
-  z-index: 1;
   transform: translate(-50%);
+  z-index: 1;
 }
 
 .roulette-arrow i {
-  font-size: 50px;
+  font-size: 60px;
   color: black;
   transform: rotate(90deg);
 }
@@ -59,7 +60,7 @@
   border-radius: 80px;
 
   font-size: 20px;
-  background: lightgrey;
+  /* background: lightgrey; */
   border: 2px solid;
   /* border-image: linear-gradient(to right, #fbfcb9be, #ffcdf3aa, #65d3ffaa); */
 }
