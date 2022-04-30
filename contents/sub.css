@@ -1,0 +1,151 @@
+section {
+  display: grid;
+  align-items: center;
+  height: calc(100% - 200px);
+}
+.game-title {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 27px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 46px;
+  color: rgb(64, 55, 107);
+  text-align: center;
+  background-color: rgb(195 186 233);
+  border-radius: 25px;
+}
+section .game-box {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 20px 20px 0 rgb(195, 186, 233);
+  position: relative;
+}
+
+section .game-box .result {
+  border-radius: 30px;
+  border: 4px solid var(--colorShadeA);
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  left: calc(50% - 250px);
+  top: calc(50% - 150px);
+  text-align: center;
+  padding: 50px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: block; /*평소에 none, 게임 완료시 block*/
+}
+section .game-box .result p:first-child {
+  font-size: 45px;
+  font-weight: bold;
+  color: rgb(82, 79, 161);
+  margin-bottom: 15px;
+}
+section .game-box .result p:nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+  color: #777;
+  margin-bottom: 35px;
+}
+section .game-box .result p:nth-child(2) span.score {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--colorShadeA);
+}
+section .game-box .result .btn_again {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  background-color: var(--colorShadeA);
+  color: white;
+  font-weight: bold;
+  line-height: 40px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+section .game-box .result .btn_again:hover {
+  background-color: rgb(82, 79, 161);
+}
+section .game-box .result .btn_again:hover i {
+  transition: 0.2s;
+}
+section .game-box .result .btn_again:hover i {
+  transform: rotate(180deg);
+}
+
+footer#sub_ft {
+  width:100%;
+  position:fixed;
+  left:0;
+  bottom:0;
+  height:100px;
+}
+footer#sub_ft > a {
+  font-size:20px;
+  font-weight:600;
+  line-height:120px;
+  color:rgba(39, 11, 92, 0.7);
+  padding:0 30px;
+  position:relative;
+}
+footer#sub_ft > a:hover {
+  color:rgb(156, 113, 255);
+}
+footer#sub_ft > a:hover span {
+  display:inline-block;
+}
+footer#sub_ft a span {
+  color:#555;
+  font-size:16px;
+  background-color:white;
+  height:30px;
+  padding:0 20px;
+  border-radius: 15px;
+  line-height:30px;
+  text-align:center;
+  margin:0 5px;
+  display:none;
+}
+footer#sub_ft a span.next-name {
+  left:auto;
+  right:15px;
+}
+footer#sub_ft .prev-game {
+  float:left;
+}
+footer#sub_ft > .prev-game:hover {
+  animation:arrow 1s ease infinite;
+}
+@keyframes arrow {
+  0%{
+
+  }
+  50%{
+      margin-left:-10px;
+  }
+  100%{
+
+  }
+}
+footer#sub_ft .next-game {
+  float:right;
+}
+footer#sub_ft .next-game:hover {
+  animation:arrow2 1s ease infinite;
+}
+@keyframes arrow2 {
+  0%{
+
+  }
+  50%{
+      margin-right:-10px;
+  }
+  100%{
+
+  }
+}

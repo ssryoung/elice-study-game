@@ -65,7 +65,7 @@ button.gameButton::before {
     border-radius: inherit;
     box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
     transform: translate3d(0, 0.75em, -1em);
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    transition: all 100ms cubic-bezier(0, 0, 1, 1);
 }
 button.gameButton:hover {
     background: var(--colorShadeD);
