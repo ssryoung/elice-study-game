@@ -30,21 +30,35 @@ class Roulette {
     });
   };
 
-  // displayResult() : 룰렛 결과 메세지를 보여줌 (추후 메인 페이지에 합치고 나서는 필요 없는 부분! 메인 페이지에서 만들어놓은 모달창에 메세지 데이터만 넘겨주면 됨)
+  // displayResult() : 룰렛 결과 메세지를 보여줌
   displayResult = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        let message = "";
-        if (this.randomDeg <= 30 || this.randomDeg >= 330)
-          message = "당첨!! CU 3,000원 상품권";
-        else if (this.randomDeg >= 90 && this.randomDeg <= 150)
-          message = "당첨!! 스타벅스 아메리카노";
-        else if (this.randomDeg >= 210 && this.randomDeg <= 270)
-          message = "당첨!! 햄버거 세트 교환권";
-        else message = "꽝! 다음기회에";
+        let message = ["", ""];
+        if (this.randomDeg <= 30 || this.randomDeg >= 330) {
+          message[0] = "당첨!!";
+          message[1] = "CU 3,000원 상품권";
+        } else if (this.randomDeg >= 90 && this.randomDeg <= 150) {
+          message[0] = "당첨!!";
+          message[1] = "스타벅스 아메리카노";
+        } else if (this.randomDeg >= 210 && this.randomDeg <= 270) {
+          message[0] = "당첨!!";
+          message[1] = "햄버거 세트 교환권";
+        } else {
+          message[0] = "꽝!!";
+          message[1] = "다음 기회에";
+        }
 
-        alert(message);
-        resolve("displayResult finished");
+        // alert(message);
+        resultText[0].innerHTML = message[0];
+        resultText[1].innerHTML = message[1];
+        result.style.display = "block";
+
+        retryBtn.addEventListener("click", () => {
+          result.style.display = "none";
+          resolve(true);
+        });
+        // resolve("displayResult finished");
       }, 5000);
     });
   };
@@ -75,11 +89,13 @@ class Roulette {
     let res = await this.rotateRoulette();
     console.log(res);
     res = await this.displayResult();
-    console.log(res);
-    res = await this.resetRoulette();
-    console.log(res);
-    res = await this.enabledRoulette();
-    console.log(res);
+    if (res === true) {
+      console.log(res);
+      res = await this.resetRoulette();
+      console.log(res);
+      res = await this.enabledRoulette();
+      console.log(res);
+    }
   };
 }
 
@@ -87,6 +103,9 @@ const r = new Roulette();
 
 let panel = document.querySelector(".roulette-image");
 let btn = document.querySelector(".roulette-btn");
+let result = document.querySelector(".result");
+let resultText = result.querySelectorAll("p");
+let retryBtn = document.querySelector(".btn_again");
 
 btn.addEventListener("click", r.btnClick);
 
