@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/reset.css" />
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="stylesheet" type="text/css" href="/contents/sub.css" />
+    <link rel="stylesheet" type="text/css" href="/contents/css/roulette.css" />
     <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
 
     <script
@@ -28,12 +29,27 @@
       <section>
         <div class="game-box">
           <!---------------여기에 게임 제작---------------->
-          <div class="result">
+
+          <div class="roulette">
+            <div class="roulette-arrow">
+              <i class="fa-solid fa-play"></i>
+            </div>
+            <div class="roulette-bg">
+              <div class="roulette-image"></div>
+            </div>
+            <button class="roulette-btn">
+              <span>start</span>
+            </button>
+          </div>
+          <div class="userCustomize"></div>
+
+          <!---------------결과 창---------------->
+          <div class="result" style="display: none">
             <p>You win!</p>
             <p>SCORE <span class="score">100</span></p>
-            <a href="#" class="btn_again"
-              >다시하기 <i class="fa-solid fa-arrow-rotate-right"></i
-            ></a>
+            <a href="#" class="btn_again">
+              다시하기 <i class="fa-solid fa-arrow-rotate-right"></i>
+            </a>
           </div>
         </div>
       </section>
