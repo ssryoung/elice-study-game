@@ -15,7 +15,7 @@ td{
 }
 #scoreField{
     float: right;
-    background-color: rgb(14,31,49);
+    background-color: rgb(108, 93, 182);
     margin-top: 1.9px;
     margin-left: 3px;
     width: 100px;
@@ -26,7 +26,7 @@ td{
     font-weight: bold;
     color: white;
     height: 30px;
-    margin: 10px 0;
+    margin: 14px 0;
 }
 #help2 {
     font-size: 15px;
@@ -41,14 +41,14 @@ td{
     text-align: center;
     font-weight: bold;
     color: white;
-    background-color: rgb(21,46,74);
+    background-color: rgb(195, 186, 233);
     padding: 10px;
     margin: 0px;
 }
 #nextTable{
     position: absolute;
-    left: 665px;
-    top: 267px;
+    left: 663px;
+    top: 280px;
 }
 #pause, #gameover{
     position: absolute;
