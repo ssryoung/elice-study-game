@@ -31,7 +31,7 @@ var shapeColorArray = [
 ];
 var tileColor = "rgb(255, 255, 255)",
     shapeColor,
-    wallColor = "rgb(0,0,0)";
+    wallColor = "rgb(108, 93, 182)";
 var shapeColorIndex, nextColorIndex;
 var movingThread, movingSpeed;
 var fastMode = false;
