@@ -30,6 +30,7 @@ var shapeColorArray = [
     "rgb(102,86,167)"
 ];
 var tileColor = "rgb(255, 255, 255)",
+    dsas
     shapeColor,
     wallColor = "rgb(108, 93, 182)";
 var shapeColorIndex, nextColorIndex;
