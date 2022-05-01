@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이상한 나라의 게임</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/contents/sub.css" />
+    <link rel="stylesheet" type="text/css" href="/contents/css/tetris.css" />
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/1f5f133c98.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#header").load("/contents/header.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="pattern-cross-dots-lg mainColor">
+      <div id="header"></div>
+      <h1 class="game-title">테트리스</h1>
+      <section>
+        <div class="game-box">
+            <div id="tetrisContainer">
+                <div id="gameField">
+                    <div id="gameover">
+                        <h1>Game Over</h1>
+                        <h4>press 'F5' to restart</h4>
+                    </div>
+                    <div id="pause">
+                        <h1>Pause</h1>
+                        <h4>press 'F5' to resume</h4>
+                    </div>
+                    <table id="nextTable">
+                        <tr><td id="00"></td><td id="01"></td><td id="02"></td><td id="03"></td></tr>
+                        <tr><td id="10"></td><td id="11"></td><td id="12"></td><td id="13"></td></tr>
+                        <tr><td id="20"></td><td id="21"></td><td id="22"></td><td id="23"></td></tr>
+                        <tr><td id="30"></td><td id="31"></td><td id="32"></td><td id="33"></td></tr>
+                    </table>
+                    <div id="scoreField">
+                        <p class="sub">LEVEL</p>
+                        <p id="level">1</p>
+                        <p class="sub">SCORE</p>
+                        <p id="score">0</p>
+                        <p class="sub">NEXT</p>
+                        <p><br><br><br><br></p>
+                        <p class="sub">HELP</p>
+                        <p id="help2">← ↓ →</p>
+                        <p id="help2">Space Bar</p>
+                        <p id="help2">P to pause</p>
+                    </div>
+                    <script type="text/javascript" src="/contents/js/tetris.js"></script>
+                </div>
+            </div> 
+        </div>
+      </section>
+        <footer id="sub_ft">
+        <a href="#" class="prev-game"><i class="fa-solid fa-arrow-left-long"></i> 이전게임
+            <span class="prev-name">포켓몬 모으기</span>
+        </a>
+        <a href="#" class="next-game">
+            <span class="next-name">룰렛</span>
+            다음게임 <i class="fa-solid fa-arrow-right-long"></i></a>
+        </footer>
+    </div>
+  </body>
+</html>

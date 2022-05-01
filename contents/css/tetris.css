@@ -1,0 +1,67 @@
+td{
+    width: 14px;
+    height: 14px;
+}
+#tetrisContainer {
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 20px;
+}
+#gameField{
+    float: left;
+}
+#scoreField{
+    float: right;
+    background-color: rgb(14,31,49);
+    margin-top: 1.9px;
+    margin-left: 3px;
+    width: 100px;
+}
+#score, #level{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    height: 30px;
+}
+#help2 {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+}
+.sub{
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(21,46,74);
+    padding: 10px;
+    margin: 0px;
+}
+#nextTable{
+    position: absolute;
+    float: right;
+    left: 670px;
+    top: 227px;
+}
+#comboField{
+    position: absolute;
+    left: 27px;
+    top: 320px;
+    width: 384px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+#pause, #gameover{
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    visibility: hidden;
+    color: white;
+}
