@@ -52,9 +52,18 @@ class Roulette {
         // alert(message);
         resultText[0].innerHTML = message[0];
         resultText[1].innerHTML = message[1];
+
+        left.style.backgroundColor = "gray";
+        left.style.opacity = 0.5;
+        right.style.backgroundColor = "gray";
+        right.style.opacity = 0.5;
         result.style.display = "block";
 
         retryBtn.addEventListener("click", () => {
+          left.style.backgroundColor = "white";
+          left.style.opacity = 1;
+          right.style.backgroundColor = "white";
+          right.style.opacity = 1;
           result.style.display = "none";
           resolve(true);
         });
@@ -106,7 +115,8 @@ let btn = document.querySelector(".roulette-btn");
 let result = document.querySelector(".result");
 let resultText = result.querySelectorAll("p");
 let retryBtn = document.querySelector(".btn_again");
-
+let left = document.querySelector(".roulette");
+let right = document.querySelector(".userCustomize");
 btn.addEventListener("click", r.btnClick);
 
 // 수정사항) 룰렛 백그라운드 이미지 바꾸기 & 6등분이 아니라 사용자가 임의로 추가한 만큼의 선택지를 룰렛에 구현하기 (추가 기능)

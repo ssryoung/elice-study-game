@@ -3,6 +3,7 @@
   /* background-color: red; */
   width: 50%;
   height: 100%;
+  border-radius: 50px 0 0 50px;
   /* top: 10%;
   left: 10%;
   transform: translate(-10%, -10%);
@@ -67,12 +68,18 @@
 
 .userCustomize {
   position: absolute;
+  border-radius: 0 50px 50px 0;
   /* background-color: blue; */
   width: 50%;
   right: 0;
   height: 100%;
 }
-
+.userCustomize p {
+  /* position: absolute; */
+  margin: 100px 0 0 70px;
+  font-size: 20px;
+  color: black;
+}
 /* .on {
     animation-name: ani;
     animation-duration: 0.1s;
