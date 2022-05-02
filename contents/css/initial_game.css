@@ -3,129 +3,129 @@
 }
 .game-box .start-box {
   position: absolute;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  background-color: rgba(0,0,0,.5);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .game-box .start-box .wrap {
-  width:500px;
-  height:300px;
+  width: 500px;
+  height: 300px;
   position: absolute;
-  left:calc(50% - 250px);
-  top:calc(50% - 150px);
-  border:4px solid rgb(195 186 233);
+  left: calc(50% - 250px);
+  top: calc(50% - 150px);
+  border: 4px solid rgb(195 186 233);
   background-color: white;
   border-radius: 30px;
   text-align: center;
-  padding:80px 30px;
-  font-size:18px;
-  color:#333;
+  padding: 80px 30px;
+  font-size: 18px;
+  color: #333;
   font-weight: 700;
   word-break: keep-all;
 }
 .game-box .start-box .wrap a {
   display: block;
-  width:150px;
+  width: 150px;
   line-height: 50px;
   margin: 30px auto 0 auto;
-  background-color : rgb(149, 134, 214);
-  color:white;
-  font-size:25px;
+  background-color: rgb(149, 134, 214);
+  color: white;
+  font-size: 25px;
   border-radius: 25px;
   font-weight: bold;
-  transition: .1s;
+  transition: 0.1s;
 }
 .game-box .start-box .wrap a:hover {
   transform: scale(1.1);
 }
 .game-box .wrap {
-  height:100%;
+  height: 100%;
 }
 .game-box .wrap > div {
-  width:50%;
-  height:100%;
-  float:left;
+  width: 50%;
+  height: 100%;
+  float: left;
   text-align: center;
   display: grid;
   align-items: center;
 }
 .game-box .wrap .left {
-  border-right:1px dotted #aaa
+  border-right: 1px dotted #aaa;
 }
 
 .game-box .wrap .left .left-wrap .hint-wrap {
-  font-size:25px;
+  font-size: 25px;
   font-weight: bold;
-  color:#aaa;
-  background-color:#eee;
-  display:inline-block;
-  padding:5px 10px;
-  margin-bottom:20px;
+  color: #aaa;
+  background-color: #eee;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 20px;
 }
 .game-box .wrap .left .left-wrap .hint-wrap .hint {
-  color:#777;
+  color: #777;
 }
 .game-box .wrap .left .left-wrap .initial {
-  font-size:55px;
+  font-size: 55px;
   font-weight: bold;
-  color:#000;
-  line-height:35px;
+  color: #000;
+  line-height: 35px;
 }
 
 .game-box .wrap .right .right-wrap {
-  padding:0 20%;
+  padding: 0 20%;
 }
 .game-box .wrap .right .right-wrap .timer {
-  font-size:25px;
-  margin-bottom:20px;
-  color:#999;
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #999;
   text-align: left;
-  width:100%;
-  display:inline-block;
+  width: 100%;
+  display: inline-block;
 }
 .game-box .wrap .right .right-wrap .timer .fa-solid {
-  font-size:19px;
-  line-height:15px;
-  margin-right:10px;
+  font-size: 19px;
+  line-height: 15px;
+  margin-right: 10px;
   font-weight: 400;
 }
 .game-box .wrap .right .right-wrap .timer .timer-num {
   font-weight: bold;
 }
 .game-box .wrap .right .right-wrap input {
-  width:calc(100% - 85px);
-  height:50px;
-  font-size:25px;
-  line-height:50px;
-  border:3px solid rgb(195 186 233);
-  padding:0 10px;
+  width: calc(100% - 85px);
+  height: 50px;
+  font-size: 25px;
+  line-height: 50px;
+  border: 3px solid rgb(195 186 233);
+  padding: 0 10px;
   vertical-align: middle;
   border-radius: 10px;
-  margin-right:5px;
+  margin-right: 5px;
   box-sizing: border-box;
 }
 .game-box .wrap .right .right-wrap input::placeholder {
-  color:#ccc
+  color: #ccc;
 }
-.game-box .wrap .right .right-wrap input:focus{
+.game-box .wrap .right .right-wrap input:focus {
   outline: none;
 }
 .game-box .wrap .right .right-wrap button {
-  height:50px;
-  font-size:20px;
-  line-height:50px;
-  padding:0 15px;
-  background-color:rgb(195 186 233);
-  color:rgb(64, 55, 107);
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  padding: 0 15px;
+  background-color: rgb(195 186 233);
+  color: rgb(64, 55, 107);
   border-radius: 10px;
   vertical-align: middle;
 }
 .game-box .wrap .right .right-wrap .answer-result {
-  margin-top:20px;
-  font-size:20px;
-  color:#333;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
 }
 .game-box .wrap .right .right-wrap .answer-result span {
   font-weight: bold;
