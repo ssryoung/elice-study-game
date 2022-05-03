@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>제비뽑기</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제비뽑기</title>
 
-  <link rel="stylesheet" type="text/css" href="/contents/css/drawingLots.css">
-  <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/contents/css/drawingLots.css"
+    />
+    <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
 
-  <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript">   
     $(document).ready( function() {
       $("#header").load("component/header.html");  
     });
   </script> -->
-</head>
-<body>
-  <div class="pattern-cross-dots-lg mainColor">
-    <div id="header"></div>
-    <div class="gameWrap">
-      <h1>제비뽑기 게임</h1>
-      <div class="box">
-      <div class="setting">
-        <span class="setPeople">
-          <span class="set">인원수</span>
-            <button type="button" class="minus_btn" id="peopleMinus">-</button>                   
-            <span class="num_people"><span class="people">5</span>명</span>
-            <button type="button" class="plus_btn" id="peoplePlus">+</button>          
-        </span>
-        <span class="setBomb"> 
-          <span class="set">꽝 개수</span>
-            <button type="button" class="minus_btn" id="bumbMinus">-</button>                   
-            <span class="num_bumb"><span class="bumb">3</span>개</span>
-            <button type="button" class="plus_btn" id="bumbPlus">+</button>
-        </span>
-      </div>
-      <div class="mainGame">
-        <div class="lots">
-          <ul class="lot_list">
-            <li class="lot" id="first_lot"><img class="lotImg"><div class="lotResult"></div></li>
-            <li class="lot" id="second_lot"><img class="lotImg"><div class="lotResult"></div></li>
-            <li class="lot" id="third_lot"><img class="lotImg"><div class="lotResult"></div></li>
-            <li class="lot" id="fourth_lot"><img class="lotImg"><div class="lotResult"></div></li>
-            <li class="lot" id="fifth_lot"><img class="lotImg"><div class="lotResult"></div></li>
-          </ul>
-        </div>
-        <div class="playWrap">
-          <button type="button" class="play_btn">play</button>
+  </head>
+  <body>
+    <div class="pattern-cross-dots-lg mainColor">
+      <div id="header"></div>
+      <div class="gameWrap">
+        <h1>제비뽑기 게임</h1>
+        <div class="box">
+          <div class="setting">
+            <span class="setPeople">
+              <span class="set">인원수</span>
+              <button type="button" class="minus_btn" id="peopleMinus">
+                -
+              </button>
+              <span class="num_people"><span class="people">5</span>명</span>
+              <button type="button" class="plus_btn" id="peoplePlus">+</button>
+            </span>
+            <span class="setBomb">
+              <span class="set">꽝 개수</span>
+              <button type="button" class="minus_btn" id="bumbMinus">-</button>
+              <span class="num_bumb"><span class="bumb">3</span>개</span>
+              <button type="button" class="plus_btn" id="bumbPlus">+</button>
+            </span>
+          </div>
+          <div class="mainGame">
+            <div class="lots">
+              <ul class="lot_list">
+                <li class="lot" id="first_lot">
+                  <img class="lotImg" />
+                  <div class="lotResult"></div>
+                </li>
+                <li class="lot" id="second_lot">
+                  <img class="lotImg" />
+                  <div class="lotResult"></div>
+                </li>
+                <li class="lot" id="third_lot">
+                  <img class="lotImg" />
+                  <div class="lotResult"></div>
+                </li>
+                <li class="lot" id="fourth_lot">
+                  <img class="lotImg" />
+                  <div class="lotResult"></div>
+                </li>
+                <li class="lot" id="fifth_lot">
+                  <img class="lotImg" />
+                  <div class="lotResult"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="playWrap">
+              <button type="button" class="play_btn">play</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-    
-</body>
-<script type="text/javascript" src="/contents/js/drawingLots.js"></script>
+  </body>
+  <script type="text/javascript" src="/contents/js/drawingLots.js"></script>
 </html>
