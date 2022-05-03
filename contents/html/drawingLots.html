@@ -1,30 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>제비뽑기</title>
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/contents/css/drawingLots.css"
-    />
+    <title>이상한 나라의 게임</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/sub.css" />
+    <link rel="stylesheet" type="text/css" href="/css/drawingLots.css"/>
     <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
 
-    <!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript">   
-    $(document).ready( function() {
-      $("#header").load("component/header.html");  
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">   
+      $(document).ready( function() {
+        $("#header").load("/header.html");  
     });
-  </script> -->
+  </script>
   </head>
   <body>
     <div class="pattern-cross-dots-lg mainColor">
       <div id="header"></div>
-      <div class="gameWrap">
-        <h1>제비뽑기 게임</h1>
-        <div class="box">
+      <h1 class="game-title">제비뽑기</h1>
+      <section>
+        <div class="game-box">
           <div class="setting">
             <span class="setPeople">
               <span class="set">인원수</span>
@@ -71,8 +69,19 @@
             </div>
           </div>
         </div>
-      </div>
+      
+    </section>
+    <footer id="sub_ft">
+      <a href="/html/initial_game.html" class="prev-game"
+        ><i class="fa-solid fa-arrow-left-long"></i> 이전게임
+        <span class="prev-name">초성게임</span>
+      </a>
+      <a href="#" class="next-game">
+        <span class="next-name">포켓몬 모으기</span>
+        다음게임 <i class="fa-solid fa-arrow-right-long"></i
+      ></a>
+    </footer>
     </div>
   </body>
-  <script type="text/javascript" src="/contents/js/drawingLots.js"></script>
+  <script type="text/javascript" src="/js/drawingLots.js"></script>
 </html>
