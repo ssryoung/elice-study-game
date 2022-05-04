@@ -1,41 +1,5 @@
-@font-face {
-  font-family: "Yeongdo-Rg";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/Yeongdo-Rg.woff")
-    format("woff");
-}
-
-:root {
-  --colorShadeA: #b18597;
-  --colorShadeB: #f9c4d2;
-  --colorShadeC: #ffe3e2;
-  --colorShadeD: #ffe9e9;
-  --colorShadeE: #fff0f0;
-}
-
-html{
-  overflow: scroll;
-}
-body{
-  width: 100%;
-  height: 700px;
-}
-.pattern-cross-dots-lg {
-  width: auto;
-  height: auto;
-}
-.mainColor {
-  position:relative;
-  color: rgb(82, 79, 161, 0.7);
-  background-color: rgb(227, 227, 252);
-}
-.playWrap {
-  width: 65%;
-  height: 100px;
-  margin: 0 auto;
-  margin-top: 80px;
-  justify-content: center;
-}
-.gameWrap {
+.game-box {
+  overflow: hidden;
   position: fixed;
   box-sizing: border-box;
   width: 50%;
@@ -43,11 +7,9 @@ body{
   text-align: center;
   margin-left: 25%;
   margin-right: 25%;
-  padding-top: 40px;
   position:relative;
 }
 .setting {
-  margin-top: 50px;
   background-color: lightgoldenrodyellow;
   display: flex;
   justify-content: center;
@@ -79,6 +41,8 @@ body{
   background-color: #dde5ff;
   height: 550px;
   padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .play_btn {
   width: 200px;
@@ -87,6 +51,7 @@ body{
   background-color: white;
   color: black;
   margin-top: 50px;
+  justify-content:center;
 }
 .play_btn:hover {
   box-shadow: 0px 0px 0px, 2px 2px 2px rgba(0, 0, 0, 0.9);
@@ -104,6 +69,7 @@ img{
 .lot_list{
   display: inline-block;
   list-style-type: none;
+  
 }
 li{
   float: left;
@@ -114,13 +80,13 @@ li{
   height: 200px;
 }
 .lotImg{
-  content:url("https://cdn-icons.flaticon.com/png/512/2579/premium/2579276.png?token=exp=1651484881~hmac=9ae0a99b000016dca5f8a2e8a23a21d6");
+  content:url("/contents/img/drawingLotDefault.png");
 }
 .passImg{
-  content:url("https://cdn-icons.flaticon.com/png/512/2579/premium/2579268.png?token=exp=1651484024~hmac=0cecad49187c1adce8e3781b1d91504f");
+  content:url("/contents/img/drawingLotPass.png");
 }
 .bombImg{
-  content:url("https://cdn-icons.flaticon.com/png/512/2731/premium/2731796.png?token=exp=1651502449~hmac=8da51d5a192588a6eac9f7b95464b87d");
+  content:url("/contents/img/drawingLotBomb.png");
 }
 .lotResult{
   height: 20px;
