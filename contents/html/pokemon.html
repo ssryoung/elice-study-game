@@ -53,19 +53,22 @@
               <button id="start">start</button>
               <button id="end">end</button>
               <p id="vs">vs</p>
-              <span id="npc">dd</span>
+              <span id="npc">가위바위보 승리하면 포켓몬 한마리를 드려요!</span>
             </div>
             <!-- //end vsPanel -->
 
             <div id="panel">
+              <!-- userChoice f -->
+              <!-- <form id="userChoice"> -->
               <button
                 id="paper"
                 type="button"
                 value="paper"
                 class="btn_image"
                 id="img-btn"
+                onClick="playRSP()"
               >
-                <img src="../img/paper.gif" />
+                <img src="../img/paper.gif" value="paper" />
               </button>
 
               <button
@@ -74,8 +77,9 @@
                 value="rock"
                 class="btn_image"
                 id="img-btn"
+                onClick="playRSP()"
               >
-                <img src="../img/rock.gif" />
+                <img src="../img/rock.gif" value="rock" />
               </button>
 
               <button
@@ -84,9 +88,13 @@
                 value="scissors"
                 class="btn_image"
                 id="img-btn"
+                onClick="playRSP()"
               >
-                <img src="../img/scissors.gif" />
+                <img src="../img/scissors.gif" value="scissors" />
               </button>
+              <!-- </form> -->
+              <!-- audio -->
+              <audio id="sound" src="/contents/pop.mp3" volume="1"></audio>
             </div>
           </div>
         </div>

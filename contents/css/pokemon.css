@@ -61,9 +61,8 @@
   justify-content: center;
   height: 28.3%;
 }
-#paper,
-#rock,
-#scissors {
+
+.btn_image {
   background-color: white;
   border-radius: 3em;
   transform: scale(0.6);
