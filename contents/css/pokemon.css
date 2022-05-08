@@ -1,0 +1,85 @@
+#pokemon {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+
+/* scoreBoard */
+#scoreBoard {
+  display: flex;
+  height: 5%;
+  justify-content: space-between;
+}
+#score {
+}
+#life {
+}
+
+.name_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex모드로, 콘텐츠정렬방식 : 열,  센터정렬: center*/
+}
+/* comPanel */
+#comPanel {
+  height: 28.3%;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+}
+#comPanel img {
+  max-width: 80%;
+  height: auto;
+}
+#comName {
+}
+
+/*vsPanel*/
+#vsPanel {
+  height: 28.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#vs {
+  font-size: 7em;
+  line-height: 1em;
+}
+
+#npc {
+  height: 20%;
+}
+
+/* userPanel */
+
+#panel {
+  display: inherit;
+  justify-content: center;
+  height: 28.3%;
+}
+#paper,
+#rock,
+#scissors {
+  background-color: white;
+  border-radius: 3em;
+  transform: scale(0.6);
+  border: none;
+}
+
+.btn_image :hover {
+  transform: scale(1.2);
+}
+
+/* 기타 */
+#start,
+#end {
+  width: 100px;
+}
+
+#start :hover {
+  transform: scale(1.2);
+}
