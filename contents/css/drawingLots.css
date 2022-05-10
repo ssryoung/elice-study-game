@@ -13,9 +13,10 @@
   background-color: lightgoldenrodyellow;
   display: flex;
   justify-content: center;
-  height: 50px;
+  height: 70px;
   font-size: 20px;
   align-items: center;
+  color: rgb(123, 116, 156);
 }
 
 .minus_btn,
@@ -24,21 +25,23 @@
   margin-right: 20px;
   width: 20px;
   height: 20px;
-  background-color: white;
-  color: black;
+  background-color: rgb(195 186 233);
+  color: rgb(64, 55, 107);
+  border-radius: 5px;
+  text-align:center;
 }
 .minus_btn:hover {
-  box-shadow: 0px 0px 0px, 2px 2px 2px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 0px, 2px 2px 2px #4f3664;
 }
 .plus_btn:hover {
-  box-shadow: 0px 0px 0px, 2px 2px 2px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 0px, 2px 2px 2px #4f3664;
 }
 .set {
   margin-left: 30px;
   margin-right: 30px;
 }
 .mainGame {
-  background-color: #dde5ff;
+  background-color: #ffffff;
   height: 550px;
   padding-bottom: 20px;
   justify-content: center;
@@ -47,24 +50,26 @@
 .play_btn {
   width: 200px;
   height: 40px;
-  font-size: 18px;
-  background-color: white;
-  color: black;
-  margin-top: 50px;
-  justify-content:center;
+  font-size: 20px;
+  background-color: rgb(195 186 233);
+  color: rgb(64, 55, 107);
+  border-radius: 10px;
 }
 .play_btn:hover {
-  box-shadow: 0px 0px 0px, 2px 2px 2px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 0px, 2px 2px 2px #4f3664;
 }
 .lots{
-  height: 300px;
+  height: 450px;
+  width:750px;
+  margin-left: 220px;
 }
 .lot{
-  margin-bottom:50px;
+  margin-bottom:30px;
 }
 img{
-  height: 120px;
-  width: 120px;
+  height: 125px;
+  width: 125px;
+  margin-left: 20px;
 }
 .lot_list{
   display: inline-block;
@@ -76,8 +81,8 @@ li{
 
 }
 .lot_list{
-  margin-top: 40px;
-  height: 200px;
+  margin-top: 30px;
+  height: 250px;
 }
 .lotImg{
   content:url("/contents/img/drawingLotDefault.png");
@@ -89,8 +94,8 @@ li{
   content:url("/contents/img/drawingLotBomb.png");
 }
 .lotResult{
-  height: 20px;
-  color: black;
-  margin-top: 10px;
+  height: 10px;
+  color: rgb(123, 116, 156);
+  margin-top: 20px;
 }
 
