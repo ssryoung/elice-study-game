@@ -364,3 +364,4 @@ function stopChangeImage() {
 }
 startBtn.addEventListener("click", changeImage);
 endBtn.addEventListener("click", stopChangeImage);
+

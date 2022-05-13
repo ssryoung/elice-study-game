@@ -77,6 +77,7 @@
             });
           </script>
 
+
           <div id="pokemon">
             <!-- 3판 2선승제 버튼 만들기-->
             <div id="scoreBoard">
@@ -94,22 +95,26 @@
               <button id="start">start</button>
               <p id="vs">vs</p>
               <span id="npc">가위바위보 승리하면 포켓몬 한마리를 드려요!</span>
+
             </div>
             <!-- //end vsPanel -->
 
             <div id="panel">
+
               <!-- userChoice f -->
               <!-- <form id="userChoice"> -->
+
               <button
                 id="paper"
                 type="button"
                 value="paper"
                 class="btn_image"
                 id="img-btn"
+
                 onClick="playRSP()"
               >
                 <img src="../img/paper.gif" value="paper" />
-              </button>
+    </button>
 
               <button
                 id="rock"
@@ -117,9 +122,12 @@
                 value="rock"
                 class="btn_image"
                 id="img-btn"
+
                 onClick="playRSP()"
               >
                 <img src="../img/rock.gif" value="rock" />
+
+
               </button>
 
               <button
@@ -128,6 +136,7 @@
                 value="scissors"
                 class="btn_image"
                 id="img-btn"
+
                 onClick="playRSP()"
               >
                 <img src="../img/scissors.gif" value="scissors" />
@@ -135,6 +144,10 @@
               <!-- </form> -->
               <!-- audio -->
               <audio id="sound" src="/contents/pop.mp3" volume="1"></audio>
+
+        
+              </button>
+
             </div>
           </div>
         </div>
@@ -142,11 +155,13 @@
       </section>
 
       <footer id="sub_ft">
+
         <a href="drawingLots.html" class="prev-game"
           ><i class="fa-solid fa-arrow-left-long"></i> 이전게임
           <span class="prev-name">포켓몬 모으기</span>
         </a>
         <a href="roulette.html" class="next-game">
+
           <span class="next-name">룰렛</span>
           다음게임 <i class="fa-solid fa-arrow-right-long"></i
         ></a>
