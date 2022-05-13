@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 90%;
+
   height: inherit;
   margin: 5%;
 }
@@ -60,7 +61,9 @@
   height: 28.3%;
 }
 
-.btn_image {
+#paper,
+#rock,
+#scissors {
   background-color: white;
   border-radius: 3em;
   transform: scale(0.6);
@@ -222,3 +225,11 @@
   height: 80px;
 }
 /* 버튼클릭시 도감 닫히게  */
+
+#end {
+  width: 100px;
+}
+
+#start :hover {
+  transform: scale(1.2);
+}
