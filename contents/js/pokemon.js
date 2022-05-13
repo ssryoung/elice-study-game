@@ -306,7 +306,7 @@ for (let i = 1; i < 152; i++) {
   const number = document.createElement("span");
   const newImg = document.createElement("img");
 
-  number.innerHTML = `#${i} ${pokemonName["names"][i - 1]}`;
+  number.innerHTML = `# ${i} ${pokemonName["names"][i - 1]}`;
   newImg.src = `${pokeURL}${i}.gif`;
   pokemon.appendChild(newImg);
   pokemon.appendChild(number);
