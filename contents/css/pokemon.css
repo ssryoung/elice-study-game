@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 90%;
-  height: inherit;
+  height: 100%;
   margin: 5%;
 }
 
@@ -21,7 +21,7 @@
 }
 /* comPanel */
 #comPanel {
-  height: 28.3%;
+  height: auto;
   display: inherit;
   justify-content: center;
   align-items: center;
@@ -33,19 +33,15 @@
 
 /*vsPanel*/
 #vsPanel {
-  height: 28.3%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #vs {
-  font-size: 7em;
+  font-size: 60px;
   line-height: 1em;
-}
-
-#npc {
-  height: 20%;
 }
 
 /* userPanel */
@@ -53,7 +49,7 @@
 #panel {
   display: inherit;
   justify-content: center;
-  height: 28.3%;
+  height: auto;
 }
 
 #paper,
