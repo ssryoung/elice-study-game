@@ -36,6 +36,47 @@
               >다시하기 <i class="fa-solid fa-arrow-rotate-right"></i
             ></a>
           </div> -->
+          <div class="modal notice" id="modal_notice">
+            <div class="wrap">
+              <p>포켓몬을 모아 <br />세계 최고의 트레이너가 되어보세요!</p>
+              <img src="/contents/img/sprites/25.gif" / >
+              <button class="btn_start" id="btnStart">start!</button>
+              <script>
+                const btnStart = document.querySelector("#btnStart");
+                btnStart.addEventListener("click", () => {
+                  const notice = document.querySelector("#modal_notice");
+                  notice.style.display = "none";
+                  playRSP();
+                });
+              </script>
+            </div>
+          </div>
+
+          <!--포켓몬 도감 버튼  -->
+          <div class="modal" id="pokemonBook">
+            <div class="sub_Header">
+              <h2>포켓몬 도감</h2>
+              <span id="close">닫기</span>
+              <script>
+                const btnClosePopup = document.querySelector("#close");
+                btnClosePopup.addEventListener("click", () => {
+                  const pokeBook = document.querySelector("#pokemonBook");
+                  pokeBook.style.display = "none";
+                });
+              </script>
+            </div>
+            <div id="container"></div>
+          </div>
+          <button class="btn-open-popup">포켓몬 도감보기</button>
+          <script>
+            const modal = document.querySelector(".modal");
+            const btnOpenPopup = document.querySelector(".btn-open-popup");
+            btnOpenPopup.addEventListener("click", () => {
+              const pokeBook = document.querySelector("#pokemonBook");
+              pokeBook.style.display = "block";
+            });
+          </script>
+
           <div id="pokemon">
             <!-- 3판 2선승제 버튼 만들기-->
             <div id="scoreBoard">
@@ -51,7 +92,6 @@
             <!-- TODO vs 화면과 나레이션 문구만들기 -->
             <div id="vsPanel">
               <button id="start">start</button>
-              <button id="end">end</button>
               <p id="vs">vs</p>
               <span id="npc">가위바위보 승리하면 포켓몬 한마리를 드려요!</span>
             </div>
@@ -102,11 +142,11 @@
       </section>
 
       <footer id="sub_ft">
-        <a href="#" class="prev-game"
+        <a href="drawingLots.html" class="prev-game"
           ><i class="fa-solid fa-arrow-left-long"></i> 이전게임
           <span class="prev-name">포켓몬 모으기</span>
         </a>
-        <a href="#" class="next-game">
+        <a href="roulette.html" class="next-game">
           <span class="next-name">룰렛</span>
           다음게임 <i class="fa-solid fa-arrow-right-long"></i
         ></a>
