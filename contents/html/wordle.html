@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/1f5f133c98.js"
       crossorigin="anonymous"
     ></script>
+
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
@@ -28,6 +29,9 @@
       <section>
         <div class="game-box">
           <!---------------여기에 게임 제작---------------->
+          <div class="notification-container">
+            <p>6칸을 다 채워주세요!</p>
+          </div>
           <div class="wordle-container">
             <div class="wordle-board"></div>
             <div class="wordle-keyboard">
@@ -67,7 +71,10 @@
           </div>
           <div class="result">
             <p>You win!</p>
-            <p>SCORE <span class="score">100</span></p>
+            <p>
+              정답 <span class="answer"></span> SCORE
+              <span class="score">100</span>
+            </p>
             <a href="#" class="btn_again"
               >다시하기 <i class="fa-solid fa-arrow-rotate-right"></i
             ></a>
@@ -80,7 +87,7 @@
           <span class="prev-name">룰렛</span>
         </a>
         <a href="./initial_game.html" class="next-game">
-          <span class="prev-name">초성게임</span>
+          <span class="next-name">초성게임</span>
           다음게임 <i class="fa-solid fa-arrow-right-long"></i
         ></a>
       </footer>

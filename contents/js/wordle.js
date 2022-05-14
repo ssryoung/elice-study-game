@@ -1,43 +1,78 @@
 const board = document.querySelector(".wordle-board");
 const buttons = document.querySelectorAll("button");
+const notification = document.querySelector(".notification-container");
 const result = document.querySelector(".result");
 const winOrLose = result.firstElementChild;
+const resAnswer = document.querySelector(".answer");
 const score = document.querySelector(".score");
+const btnAgain = document.querySelector(".btn_again");
 
-// modal display: none
-result.style.display = "none";
-
-const answer = getAnswer();
+// global 변수
 let gameEndFlg = false;
 let gameWinFlg = false;
 let rowCount = 0;
 let colCount = 1;
+let answer = "";
+let answerArr = [];
+result.style.display = "none";
 
-// TODO: 정답 단어 랜덤으로 불러오기(JSON)
-// async function getAnswer() {
-function getAnswer() {
-  // const json = await fetch("../json/wordle_answer.json");
-  // const data = await json.json();
-  // const random = Math.random() * 99;
-  // const answer = await data[random];
-  const answer = "깐부";
-
-  return answer;
+// 미니게임 초기화
+function minigameInit() {
+  wordleInit();
+  removeBoard();
+  createBoard();
+  setAnswer();
 }
 
-// 정답 단어 음절 분리
-// 깐부 => [{ㄱ,ㄱ},ㅏ,ㄴ,ㅂ,ㅜ]
-let splitAnswerArr = [];
-answer.split("").map((word) => {
-  splitAnswerArr.push(...wordSeparate(word));
-});
+// 초기값 설정
+function wordleInit() {
+  gameEndFlg = false;
+  gameWinFlg = false;
+  rowCount = 0;
+  colCount = 1;
+  answer = "";
+  answerArr = [];
+  result.style.display = "none";
+}
 
-// 쌍자음, 복합모음 분리
-// [{ㄱ,ㄱ},ㅏ,ㄴ,ㅂ,ㅜ] => [ㄱ,ㄱ,ㅏ,ㄴ,ㅂ,ㅜ]
-let answerArr = [];
-splitAnswerArr.map((arr) => {
-  answerArr.push(...arr);
-});
+// 정답 단어 랜덤으로 불러오기(JSON)
+async function fetchAnswers() {
+  const res = await fetch("../json/wordle.json");
+  const data = await res.json();
+  return await data.answer;
+}
+
+// 정담 단어 설정
+function setAnswer() {
+  fetchAnswers()
+    .then((answers) => {
+      const random = Math.floor(Math.random() * (answers.length - 1));
+      answer = answers[random];
+      return answers[random];
+    })
+    .then((answerWord) => {
+      // 정답 단어 음절 분리
+      // 깐부 => [{ㄱ,ㄱ},ㅏ,ㄴ,ㅂ,ㅜ]
+      let splitAnswerArr = [];
+      answerWord.split("").map((word) => {
+        splitAnswerArr.push(...wordSeparate(word));
+      });
+      return splitAnswerArr;
+    })
+    .then((splitAnswerArr) => {
+      // 쌍자음, 복합모음 분리
+      // [{ㄱ,ㄱ},ㅏ,ㄴ,ㅂ,ㅜ] => [ㄱ,ㄱ,ㅏ,ㄴ,ㅂ,ㅜ]
+      splitAnswerArr.map((arr) => {
+        answerArr.push(...arr);
+      });
+    });
+}
+
+function removeBoard() {
+  while (board.hasChildNodes()) {
+    board.removeChild(board.firstChild);
+  }
+}
 
 // wordle-board HTML
 function createBoard() {
@@ -94,6 +129,14 @@ function tilesWrongAnimate(tiles) {
   );
 }
 
+// Show notification
+function showNotification() {
+  notification.classList.add("show");
+  setTimeout(() => {
+    notification.classList.remove("show");
+  }, 2000);
+}
+
 // change tile color
 // code -> 1: strike, 2: ball, 3: out
 function changeTileColor(tile, code) {
@@ -135,6 +178,9 @@ function handleKeyboardClick(e) {
         if (gameEndFlg) {
           showScore();
         }
+      } else {
+        tilesWrongAnimate(boardRow);
+        showNotification();
       }
     } else {
       if (colCount <= 6) {
@@ -195,6 +241,7 @@ function grade(wordArr) {
 // show result modal
 function showScore() {
   result.style.display = "block";
+  resAnswer.textContent = answer;
   if (gameWinFlg) {
     winOrLose.textContent = "You win!";
     score.textContent = `${100 - 15 * rowCount}`;
@@ -295,10 +342,13 @@ function wordSeparate(word) {
   return [cho[choIndex], jung[jungIndex], jong[jongIndex]];
 }
 
-// HTML board 추가
-createBoard();
+// 초기화 실행
+minigameInit();
 
 // wordle-keyboard button 클릭 이벤트
 [].forEach.call(buttons, (button) => {
   button.addEventListener("click", handleKeyboardClick);
 });
+
+// 다시하기
+btnAgain.addEventListener("click", minigameInit);
