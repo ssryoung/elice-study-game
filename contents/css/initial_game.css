@@ -8,6 +8,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
 }
 .game-box .start-box .wrap {
   width: 500px;
@@ -15,9 +16,8 @@
   position: absolute;
   left: calc(50% - 250px);
   top: calc(50% - 150px);
-  border: 4px solid rgb(195 186 233);
   background-color: white;
-  border-radius: 30px;
+  border-radius: 20px;
   text-align: center;
   padding: 80px 30px;
   font-size: 18px;
@@ -53,6 +53,16 @@
 }
 .game-box .wrap .left {
   border-right: 1px dotted #aaa;
+  position: relative;
+}
+
+.game-box .wrap .left .left-wrap .questionNum {
+  position:absolute;
+  width:100%;
+  right:0;
+  top:20%;
+  text-align:center;
+  font-size:30px;
 }
 
 .game-box .wrap .left .left-wrap .hint-wrap {
@@ -62,7 +72,7 @@
   background-color: #eee;
   display: inline-block;
   padding: 5px 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .game-box .wrap .left .left-wrap .hint-wrap .hint {
   color: #777;
@@ -73,7 +83,22 @@
   color: #000;
   line-height: 35px;
 }
-
+.game-box .wrap .right{
+  position:relative;
+}
+.game-box .wrap .right .score-wrap {
+  position:absolute;
+  width:100%;
+  right:0;
+  top:20%;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  color:#aaa;
+}
+.game-box .wrap .right .score-wrap .score-num {
+  color:rgb(82, 79, 161, 0.7);
+}
 .game-box .wrap .right .right-wrap {
   padding: 0 20%;
 }
@@ -93,9 +118,10 @@
 }
 .game-box .wrap .right .right-wrap .timer .timer-num {
   font-weight: bold;
+  color:#555;
 }
 .game-box .wrap .right .right-wrap input {
-  width: calc(100% - 85px);
+  width: calc(100% - 95px);
   height: 50px;
   font-size: 25px;
   line-height: 50px;
@@ -125,8 +151,41 @@
 .game-box .wrap .right .right-wrap .answer-result {
   margin-top: 20px;
   font-size: 20px;
-  color: #333;
+  display: none;
+  color:black
 }
 .game-box .wrap .right .right-wrap .answer-result span {
   font-weight: bold;
+}
+
+section .game-box .result p:nth-child(2) {
+  font-size:25px;
+}
+
+.awesome {
+  animation:awesomeAM 4s linear infinite
+}
+@keyframes awesomeAM {
+  0% {
+    color:red
+  }
+  25% {
+    color:orange
+  }
+  50% {
+    color:green
+  }
+  75% {
+    color:blue
+  }
+  100% {
+    color:red
+  }
+}
+
+canvas{
+  z-index:10;pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: scale(1.1);
 }
