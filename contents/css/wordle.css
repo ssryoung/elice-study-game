@@ -34,11 +34,16 @@
   color: rgb(195 186 233);
 }
 
+.result {
+  z-index: 999;
+}
+
 .wordle-keyboard {
   width: 482px;
   display: grid;
   grid-gap: 5px;
   grid-template-rows: repeat(3, 1fr);
+  z-index: 998;
 }
 
 .wordle-keyboard-row {
