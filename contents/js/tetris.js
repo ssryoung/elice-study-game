@@ -307,20 +307,20 @@ function gameOver(){
     clearTimeout(movingThread);
     initExistField();
     alert("[Game Over]\nLevel: "+level+"\nScore: "+score);
-    document.getElementById("gameField").style.visibility = "hidden";
-    document.getElementById("gameover").style.visibility = "visible";
+    document.getElementById("gameField").style.display = "hidden";
+    document.getElementById("gameover").style.display = "visible";
 }
 function pause(){
     if(isPaused){
         movingThread = setTimeout("moveDown()",movingSpeed);
-        document.getElementById("pause").style.visibility = "hidden";
-        document.getElementById("gameField").style.visibility = "visible";
+        document.getElementById("pause").style.display = "hidden";
+        document.getElementById("gameField").style.display = "visible";
         isPaused = false;
     }
     else{
         clearTimeout(movingThread);
-        document.getElementById("gameField").style.visibility = "hidden";
-        document.getElementById("pause").style.visibility = "visible";
+        document.getElementById("gameField").style.display = "hidden";
+        document.getElementById("pause").style.display = "visible";
         isPaused = true;
     }
 }
