@@ -50,17 +50,11 @@ td {
   padding: 10px;
   margin: 0px;
 }
-/* #nextTable {
-  position: absolute;
-  left: 663px;
-  top: 280px;
-  display: none;
-} */
 #pause,
 #gameover {
+  display: none;
   position: absolute;
   left: 200px;
   top: 200px;
-  visibility: hidden;
-  color: white;
+  color: rgb(255, 255, 255);
 }

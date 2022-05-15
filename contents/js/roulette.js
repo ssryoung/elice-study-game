@@ -119,17 +119,10 @@ let left = document.querySelector(".roulette");
 let right = document.querySelector(".userCustomize");
 btn.addEventListener("click", r.btnClick);
 
-// 수정사항) 룰렛 백그라운드 이미지 바꾸기 & 6등분이 아니라 사용자가 임의로 추가한 만큼의 선택지를 룰렛에 구현하기 (추가 기능)
-// => 만약 도전한다면 Canvas API 또는 p5.js 먼저 학습해야 할 듯
-// 참고 링크는, md 파일에 출처 모두 남기기 + 노션에 배운 내용, 진행 현황 기록할 때도 참고)
-/*
-  - 룰렛 : https://jnoony-code.tistory.com/19
-  - https://ko.javascript.info/settimeout-setinterval
-  - http://www.devdic.com/javascript/refer/dom/method:1585/animate()
-  - https://webdir.tistory.com/506
-  - https://webzz.tistory.com/369
-  - https://api.jquery.com/animate/
-  
-  추가.... 
-  
-  */
+// 참고한 링크
+// https://jnoony-code.tistory.com/19
+// https://ko.javascript.info/settimeout-setinterval
+// http://www.devdic.com/javascript/refer/dom/method:1585/animate()
+// https://webdir.tistory.com/506
+// https://webzz.tistory.com/369
+// https://api.jquery.com/animate/
