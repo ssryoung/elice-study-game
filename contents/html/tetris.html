@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="stylesheet" type="text/css" href="/contents/sub.css" />
     <link rel="stylesheet" type="text/css" href="/contents/css/tetris.css" />
+    <link rel="styleSheet" href="../css/pokemon.css" />
     <link href="https://unpkg.com/pattern.css" rel="stylesheet" />
 
     <script
@@ -28,49 +29,64 @@
       <h1 class="game-title">테트리스</h1>
       <section>
         <div class="game-box">
+          <!-- <div class="modal notice" id="modal_notice">
+            <div class="wrap">
+              <p>포켓몬을 모아 <br />세계 최고의 트레이너가 되어보세요!</p>
+              <img src="/contents/img/sprites/25.gif" / >
+              <button class="btn_start" id="btnStart">start!</button>
+              <script>
+                const btnStart = document.querySelector("#btnStart");
+                btnStart.addEventListener("click", () => {
+                  const notice = document.querySelector("#modal_notice");
+                  notice.style.display = "none";
+                  moveDown();
+                });
+              </script>
+            </div>
+          </div> -->
           <div id="tetrisContainer">
             <div id="gameField">
-              <div id="gameover">
+              <!-- <div id="gameover">
                 <h1>Game Over</h1>
                 <h4>press 'F5' to restart</h4>
-              </div>
+              </div> -->
               <div id="pause">
                 <h1>Pause</h1>
                 <h4>press 'F5' to resume</h4>
               </div>
-              <table id="nextTable">
-                <tr>
-                  <td id="00"></td>
-                  <td id="01"></td>
-                  <td id="02"></td>
-                  <td id="03"></td>
-                </tr>
-                <tr>
-                  <td id="10"></td>
-                  <td id="11"></td>
-                  <td id="12"></td>
-                  <td id="13"></td>
-                </tr>
-                <tr>
-                  <td id="20"></td>
-                  <td id="21"></td>
-                  <td id="22"></td>
-                  <td id="23"></td>
-                </tr>
-                <tr>
-                  <td id="30"></td>
-                  <td id="31"></td>
-                  <td id="32"></td>
-                  <td id="33"></td>
-                </tr>
-              </table>
               <div id="scoreField">
                 <p class="sub">LEVEL</p>
                 <p id="level">1</p>
                 <p class="sub">SCORE</p>
                 <p id="score">0</p>
                 <p class="sub">NEXT</p>
-                <p><br /><br /><br /><br /></p>
+                <!-- <p><br /><br /><br /><br /></p> -->
+                <table id="nextTable">
+                  <tr>
+                    <td id="00"></td>
+                    <td id="01"></td>
+                    <td id="02"></td>
+                    <td id="03"></td>
+                  </tr>
+                  <tr>
+                    <td id="10"></td>
+                    <td id="11"></td>
+                    <td id="12"></td>
+                    <td id="13"></td>
+                  </tr>
+                  <tr>
+                    <td id="20"></td>
+                    <td id="21"></td>
+                    <td id="22"></td>
+                    <td id="23"></td>
+                  </tr>
+                  <tr>
+                    <td id="30"></td>
+                    <td id="31"></td>
+                    <td id="32"></td>
+                    <td id="33"></td>
+                  </tr>
+                </table>
                 <p class="sub">HELP</p>
                 <p id="help2">← ↓ →</p>
                 <p id="help2">Space Bar</p>
