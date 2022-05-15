@@ -29,13 +29,32 @@
       <section>
         <div class="game-box">
           <!---------------여기에 게임 제작---------------->
-          <!-- <div class="result">
+          <div class="result" id="pokeResultBox">
             <p>You win!</p>
-            <p>SCORE <span class="score">100</span></p>
-            <a href="#" class="btn_again"
+            <div id="resultLog">
+              <span>You</span>
+              <img src="" id="resultYou">
+              <span id="vs">vs</span>
+              <img src="" id="resultPc">
+              <span>Pc</span>
+            </div>
+            <a href="#" class="btn_again" id="btnConfirm"
+              >확인 <i class="fa-solid fa-arrow-rotate-right"></i
+            ></a>
+          </div>
+
+          <div class="result" id="pokeGetBox">
+            <p>축하합니다!<br> <span>포켓몬</span>를(을) 획득했습니다!</p>
+            <div id="resultLog">
+              <img src=""/>
+            </div>
+            <a href="#" class="btn_again" id="btnAgain"
               >다시하기 <i class="fa-solid fa-arrow-rotate-right"></i
             ></a>
-          </div> -->
+          </div>
+
+
+
           <div class="modal notice" id="modal_notice">
             <div class="wrap">
               <p>포켓몬을 모아 <br />세계 최고의 트레이너가 되어보세요!</p>
@@ -70,40 +89,25 @@
 
 
           <div id="pokemon">
-            <!-- 3판 2선승제 버튼 만ㅇ들기-->
-            <div id="scoreBoard">
-              
+          <div id="scoreBoard">    
           <button class="btn-open-popup">포켓몬 도감보기</button>
-          <script>
-            const modal = document.querySelector(".modal");
-            const btnOpenPopup = document.querySelector(".btn-open-popup");
-            btnOpenPopup.addEventListener("click", () => {
-              const pokeBook = document.querySelector("#pokemonBook");
-              pokeBook.style.display = "block";
-            });
-          </script>
-
-              <span id="score">Score : </span>
+            <span id="score">[0/151]</span>
             </div>
-            <div id="comPanel">
+          <div id="comPanel">
               <div class="name_wrapper">
                 <img id="comImg" src="../img/paper.gif" />
                 <div id="comName">computer</div>
               </div>
-            </div>
+          </div>
+
             <!-- TODO vs 화면과 나레이션 문구만들기 -->
-            <div id="vsPanel">
-              <button id="start">start</button>
+          <div id="vsPanel">
               <p id="vs">vs</p>
               <span id="npc">가위바위보 승리하면 포켓몬 한마리를 드려요!</span>
-
-            </div>
+          </div>
             <!-- //end vsPanel -->
 
             <div id="panel">
-
-              <!-- userChoice f -->
-              <!-- <form id="userChoice"> -->
 
               <button
                 id="paper"

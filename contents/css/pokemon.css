@@ -3,7 +3,8 @@
   flex-direction: column;
   width: 90%;
   height: 100%;
-  margin: 5%;
+  margin: auto;
+  justify-content: center;
 }
 
 /* scoreBoard */
@@ -21,7 +22,7 @@
 }
 /* comPanel */
 #comPanel {
-  height: auto;
+  height: 30%;
   display: inherit;
   justify-content: center;
   align-items: center;
@@ -49,7 +50,7 @@
 #panel {
   display: inherit;
   justify-content: center;
-  height: auto;
+  height: 30%;
 }
 
 #paper,
@@ -77,7 +78,7 @@
   top: 50%;
   left: 50%;
   width: 80%;
-  height: 70%;
+  height: 90%;
   z-index: 3;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -133,7 +134,7 @@
 #pokemonBook {
   padding-right: 0px;
   padding-left: 0px;
-  padding-top: 75px;
+  padding-top: 100px;
 }
 
 #pokemonBook #container {
@@ -156,10 +157,13 @@
   top: 0;
   display: flex;
 
-  border-radius: 25px 25px 0 0;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom: 4px solid var(--colorShadeA);
   font-style: bold;
   background-color: rgb(195 186 233);
   color: whitesmoke;
+
   justify-content: space-between;
 }
 
@@ -191,7 +195,6 @@
   display: block;
   /* -webkit-filter:;*/
   filter: brightness(0);
-
   margin: auto;
 }
 
@@ -223,4 +226,57 @@
 
 #start :hover {
   transform: scale(1.2);
+}
+
+.result#pokeResultBox {
+  width: 500px;
+  height: auto;
+  margin-bottom: 30px;
+  display: none;
+}
+
+.result#pokeResultBox img {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
+.result#pokeResultBox span {
+  margin: 10px;
+  font-weight: 600;
+  vertical-align: middle;
+  line-height: 1.2em;
+}
+
+.result#pokeResultBox #vs {
+  font-size: 70;
+}
+
+#resultLog {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.result#pokeGetBox {
+  display: none;
+  z-index: 2;
+  padding: 30px;
+}
+
+.result#pokeGetBox p {
+  font-size: 22px;
+  margin: auto;
+}
+
+.result#pokeGetBox img {
+  width: 80px;
+  height: 80px;
+  transform: scale(1.2);
+  margin: 20px;
+}
+
+.result#pokeGetBox span {
+  color: rgb(250, 186, 252);
 }
