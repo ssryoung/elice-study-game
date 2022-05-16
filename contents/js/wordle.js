@@ -129,7 +129,7 @@ function tilesWrongAnimate(tiles) {
   );
 }
 
-// Show notification
+// show notification
 function showNotification() {
   notification.classList.add("show");
   setTimeout(() => {
@@ -152,41 +152,74 @@ function changeTileColor(tile, code) {
   }
 }
 
+// backspace
+function inputBackspace() {
+  if (colCount > 1) {
+    const boardRow = document.querySelectorAll(".wordle-board-row")[rowCount];
+    tilesBackspaceStyle(boardRow.children[colCount - 2]);
+    boardRow.children[colCount - 2].textContent = "";
+    colCount--;
+  }
+}
+
+// enter
+function inputEnter() {
+  const boardRow = document.querySelectorAll(".wordle-board-row")[rowCount];
+  if (boardRow.children[5].textContent) {
+    // 입력값 배열
+    let targetArr = [];
+    for (let i = 0; i < boardRow.children.length; i++) {
+      targetArr.push(boardRow.children[i].textContent);
+    }
+    // 정답 비교
+    grade(targetArr);
+
+    // 스코어 모달 오픈
+    if (gameEndFlg) {
+      showScore();
+    }
+  } else {
+    tilesWrongAnimate(boardRow);
+    showNotification();
+  }
+}
+
+// consonant-vowel
+function inputConsonantVowel(e) {
+  const boardRow = document.querySelectorAll(".wordle-board-row")[rowCount];
+  if (colCount <= 6) {
+    tilesInputAnimate(boardRow.children[colCount - 1]);
+    boardRow.children[colCount - 1].textContent = e;
+    colCount++;
+  }
+}
+
 // event
-// buttons click handle
+// keyboard buttons click handle
 function handleKeyboardClick(e) {
   if (!gameEndFlg) {
-    const boardRow = document.querySelectorAll(".wordle-board-row")[rowCount];
-
     if (e.target.id == "backspace-key") {
-      if (colCount > 1) {
-        tilesBackspaceStyle(boardRow.children[colCount - 2]);
-        boardRow.children[colCount - 2].textContent = "";
-        colCount--;
-      }
+      inputBackspace();
     } else if (e.target.id == "enter-key") {
-      if (boardRow.children[5].textContent) {
-        // 입력값 배열
-        let targetArr = [];
-        for (let i = 0; i < boardRow.children.length; i++) {
-          targetArr.push(boardRow.children[i].textContent);
-        }
-        // 정답 비교
-        grade(targetArr);
-
-        // 스코어 모달 오픈
-        if (gameEndFlg) {
-          showScore();
-        }
-      } else {
-        tilesWrongAnimate(boardRow);
-        showNotification();
-      }
+      inputEnter();
     } else {
-      if (colCount <= 6) {
-        tilesInputAnimate(boardRow.children[colCount - 1]);
-        boardRow.children[colCount - 1].textContent = e.target.dataset.key;
-        colCount++;
+      inputConsonantVowel(e.target.dataset.key);
+    }
+  }
+}
+
+// keyboard key-down handle
+function handleKeydown(e) {
+  const keyCode = e.keyCode;
+  if (keyCode === 8) {
+    inputBackspace();
+  } else if (keyCode === 13) {
+    inputEnter();
+  } else {
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
+      if (e.keyCode !== 79 && e.keyCode !== 80) {
+        const toHangul = alphabetToHangul(e.key);
+        inputConsonantVowel(toHangul);
       }
     }
   }
@@ -249,6 +282,115 @@ function showScore() {
     winOrLose.textContent = "You lose...";
     score.textContent = 0;
   }
+}
+
+// 알파벳을 한글 자모로 변경
+function alphabetToHangul(input) {
+  const alphabetKey = [
+    "q",
+    "w",
+    "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "a",
+    "s",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
+    "Q",
+    "W",
+    "E",
+    "R",
+    "T",
+    "Y",
+    "U",
+    "I",
+    "A",
+    "S",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
+    "Z",
+    "X",
+    "C",
+    "V",
+    "B",
+    "N",
+    "M",
+  ];
+
+  const hangulKey = [
+    "ㅂ",
+    "ㅈ",
+    "ㄷ",
+    "ㄱ",
+    "ㅅ",
+    "ㅛ",
+    "ㅕ",
+    "ㅑ",
+    "ㅁ",
+    "ㄴ",
+    "ㅇ",
+    "ㄹ",
+    "ㅎ",
+    "ㅗ",
+    "ㅓ",
+    "ㅏ",
+    "ㅣ",
+    "ㅋ",
+    "ㅌ",
+    "ㅊ",
+    "ㅍ",
+    "ㅠ",
+    "ㅜ",
+    "ㅡ",
+    "ㅂ",
+    "ㅈ",
+    "ㄷ",
+    "ㄱ",
+    "ㅅ",
+    "ㅛ",
+    "ㅕ",
+    "ㅑ",
+    "ㅁ",
+    "ㄴ",
+    "ㅇ",
+    "ㄹ",
+    "ㅎ",
+    "ㅗ",
+    "ㅓ",
+    "ㅏ",
+    "ㅣ",
+    "ㅋ",
+    "ㅌ",
+    "ㅊ",
+    "ㅍ",
+    "ㅠ",
+    "ㅜ",
+    "ㅡ",
+  ];
+
+  const index = alphabetKey.indexOf(input);
+
+  return hangulKey[index];
 }
 
 // 음절 분리
@@ -350,5 +492,8 @@ minigameInit();
   button.addEventListener("click", handleKeyboardClick);
 });
 
-// 다시하기
+// keydown 이벤트
+document.addEventListener("keydown", handleKeydown);
+
+// 다시하기 버튼 이벤트
 btnAgain.addEventListener("click", minigameInit);
