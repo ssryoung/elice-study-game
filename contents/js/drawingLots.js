@@ -80,7 +80,11 @@ function remove_modal(){
 let arr=[];
 // 결과
 function changeImg(){
-  
+  playbutton.disabled=true
+  peopleMinus.disabled=true
+  peoplePlus.disabled=true
+  bumbMinus.disabled=true
+  bumbPlus.disabled=true
   for(i=0; i<bumbNum;i++){
     a=Math.floor(Math.random()*peopleNum)
     while(arr.includes(a)){
@@ -102,6 +106,7 @@ function changeImg(){
     }
         
   }
+  
   setTimeout(modal, 2500);
   
 }
