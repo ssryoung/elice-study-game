@@ -8,6 +8,9 @@ let playbutton = document.getElementsByClassName("play_btn")[0];
 let img = document.getElementsByClassName("lotImg");
 let lotResult = document.getElementsByClassName("lotResult");
 let ul = document.getElementsByClassName("lot_list")[0];
+let result_modal = document.getElementsByClassName("result")[0];
+let replay = document.getElementsByClassName("again_btn")[0];
+let result_content = document.getElementsByClassName("result_content")[0];
 
 
 
@@ -65,6 +68,15 @@ function bbPlus(){
   }
 }
 
+function modal(){
+  result_modal.style.display='block';
+  result_content.innerHTML=`결과 내용`
+}
+
+function remove_modal(){
+  location.reload();
+}
+
 function changeImg(){
   var arr=[];
   for(i=0; i<bumbNum;i++){
@@ -86,6 +98,7 @@ function changeImg(){
     }
         
   }
+  setInterval(modal,1500);
 }
 
 peopleMinus.addEventListener("click",ppMinus);
@@ -93,4 +106,4 @@ peoplePlus.addEventListener("click",ppPlus);
 bumbMinus.addEventListener("click",bbMinus);
 bumbPlus.addEventListener("click",bbPlus);
 playbutton.addEventListener("click",changeImg);
-
+replay.addEventListener("click",remove_modal);
