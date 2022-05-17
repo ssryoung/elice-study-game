@@ -74,11 +74,23 @@
   right: 0;
   height: 100%;
 }
-.userCustomize p {
-  /* position: absolute; */
-  margin: 100px 0 0 70px;
+
+.userCustomize .userText {
+  position: absolute;
+  margin-left: 10%;
   font-size: 20px;
-  color: black;
+  top: 15%;
+}
+.userCustomize .userText p {
+  margin-bottom: 20px;
+}
+.userCustomize .userText input {
+  display: block;
+  font-size: 15px;
+  margin: 5px;
+  padding-left: 5px;
+  width: 250px;
+  height: 30px;
 }
 /* .on {
     animation-name: ani;

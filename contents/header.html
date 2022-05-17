@@ -5,18 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이상한 나라의 게임</title>
     <link rel="stylesheet" type="text/css" href="/contents/header.css" />
-
-    <script type="text/javascript">
-      const button = document.querySelector(".heart-like-button");
-
-      button.addEventListener("click", () => {
-        if (button.classList.contains("liked")) {
-          button.classList.remove("liked");
-        } else {
-          button.classList.add("liked");
-        }
-      });
-    </script>
   </head>
   <body>
     <header>
@@ -25,9 +13,7 @@
           <p>이상한 나라의 게임</p>
         </div>
       </div>
-      <div class="help-box no-box">
-        ~~아무내용~~
-      </div>
+      <div class="help-box no-box">~~아무내용~~</div>
       <div id="help">
         <a
           href="#"
@@ -36,7 +22,6 @@
             document.querySelector('.help-box').classList.toggle('no-box')"
           ><i class="fa-solid fa-circle-question"></i
         ></a>
-        
       </div>
       <div id="like">
         <div class="heart-like-button"></div>
@@ -44,3 +29,95 @@
     </header>
   </body>
 </html>
+
+<script type="text/javascript">
+  // 하트 클릭시 활성화하는 부분
+  const button = document.querySelector(".heart-like-button");
+
+  button.addEventListener("click", () => {
+    if (button.classList.contains("liked")) {
+      button.classList.remove("liked");
+    } else {
+      button.classList.add("liked");
+    }
+  });
+</script>
+
+<script>
+  // 도움말 추가하는 부분
+  let helpHTML = [
+    `
+    <pre>
+      <미니게임 - 제비뽑기>
+
+      랜덤으로 벌칙자를 뽑고 싶으신가요?
+      두가지 팀으로 나누고 싶으신가요?
+
+      제비뽑기 게임을 이용해보세요!! 
+
+      1. 상단에 있는 버튼을 사용해 게임 참여자 수와 꽝의 수를 설정하세요!
+      2. 하단의 play 버튼을 누르면 제비뽑기 결과가 결정됩니다!
+    </pre>
+    `,
+    `
+    <pre>
+      initial_game 도움말!
+    </pre>
+    `,
+    `
+    <pre>
+      <미니게임 - 가위바위포켓몬>
+
+      포켓몬을 모아서 최고의 포켓몬 트레이너가 되어봅시다!
+      가위바위보에서 승리할 때마다 포켓몬을 하나씩 획득하실 수 있습니다!
+      총 131개의 포켓몬을 모아보세요!
+    </pre>
+    `,
+    `
+    <pre>
+      <미니게임 - 룰렛> 
+
+      start 버튼을 눌러 룰렛을 돌리세요! 
+      룰렛이 멈추는 위치에 따라 다른 상품을 받을 수 있습니다.
+
+      사용자가 원하는 항목들을 자유롭게 추가하여 룰렛판을 커스터마이징할 수도 있습니다.
+    </pre>
+      `,
+    `
+    <pre>
+      tetris 도움말!
+    </pre>
+    `,
+    `
+    <pre>
+      wordle 도움말!
+    </pre>
+    `,
+  ];
+
+  let Url = [
+    "drawingLots.html",
+    "initial_game.html",
+    "pokemon.html",
+    "roulette.html",
+    "tetris.html",
+    "wordle.html",
+  ];
+
+  let helpBoxEl = document.querySelector(".help-box");
+  let currentUrl = location.href.split("/");
+
+  currentUrl = currentUrl[currentUrl.length - 1];
+
+  console.log("helpBoxEl : ", helpBoxEl);
+  console.log("currentUrl : ", currentUrl);
+
+  Url.forEach((value, index) => {
+    if (value === currentUrl) {
+      let renderHelp = helpHTML[index];
+      console.log(renderHelp);
+
+      helpBoxEl.innerHTML = renderHelp;
+    }
+  });
+</script>
