@@ -1,19 +1,23 @@
+@font-face {
+  font-family: 'IM_Hyemin-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .game-box {
   overflow: hidden;
-  position: fixed;
   box-sizing: border-box;
-  width: 50%;
+  width:100%;
   justify-content: center;
   text-align: center;
-  margin-left: 25%;
-  margin-right: 25%;
   position:relative;
 }
 .setting {
   background-color: lightgoldenrodyellow;
   display: flex;
   justify-content: center;
-  height: 70px;
+  height: 10%;
   font-size: 20px;
   align-items: center;
   color: rgb(123, 116, 156);
@@ -42,60 +46,123 @@
 }
 .mainGame {
   background-color: #ffffff;
-  height: 550px;
+  height: 90%;
+  width:100%;
   padding-bottom: 20px;
   justify-content: center;
   align-items: center;
+  
 }
 .play_btn {
   width: 200px;
-  height: 50px;
+  height: 40px;
   font-size: 20px;
   background-color: rgb(195 186 233);
   color: rgb(64, 55, 107);
   border-radius: 10px;
+  margin-top: 1%;
 }
 .play_btn:hover {
   box-shadow: 0px 0px 0px, 2px 2px 2px #4f3664;
 }
 .lots{
-  height: 450px;
-  width:750px;
-  margin-left: 220px;
+  height: 85%;
+  width:100%;
 }
 .lot{
   margin-bottom:30px;
 }
 img{
-  height: 125px;
-  width: 125px;
-  margin-left: 20px;
+  height: 100%;
+  width: 100%;
+
 }
 .lot_list{
   display: inline-block;
   list-style-type: none;
+  height: 100%;
   
 }
 li{
   float: left;
+  width:12%;
+  margin-left: 5%;
 
 }
 .lot_list{
-  margin-top: 30px;
-  height: 250px;
-}
+  margin-top: 3%;
+  margin-left: 7%;
+  height: 100%;
+} 
 .lotImg{
   content:url("/contents/img/drawingLotDefault.png");
+  animation: diddle-diddle 2s infinite both;
 }
 .passImg{
   content:url("/contents/img/drawingLotPass.png");
 }
 .bombImg{
   content:url("/contents/img/drawingLotBomb.png");
+  animation: none;
+}
+.playWrap{
+  clear:both;
 }
 .lotResult{
   height: 10px;
   color: rgb(123, 116, 156);
+  margin-top: 10%;
+}
+.result_content{
+  height:170px;
+  font-size: 20px;
+  color: black;
+  animation: sizeanimation 1s infinite ease-in-out;
+  font-family: 'IM_Hyemin-Bold';
+}
+.result_modal{
+  content:url("/contents/img/Crying.gif");
+  height:120px;
+  width:120px;
+}
+
+@keyframes sizeanimation {
+  from {
+      transform: scale(1.0);
+  }
+  to {
+      transform: scale(1.1);
+  }
+}
+.again_btn{
+  background-color: rgb(195 186 233);
+  color: rgb(64, 55, 107);
+  border-radius: 5px;
+  width:200px;
+  height: 100px;
   margin-top: 20px;
+}
+
+@keyframes diddle-diddle {
+  50% {
+      transform: translateX(2px) rotate(-1.2deg)
+  }
+
+  100% {
+      transform: translateX(-2px) rotate(1.2deg)
+  } 
+}
+.background{
+  width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
