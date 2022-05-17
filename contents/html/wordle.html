@@ -33,39 +33,43 @@
             <p>6칸을 다 채워주세요!</p>
           </div>
           <div class="wordle-container">
-            <div class="wordle-board"></div>
-            <div class="wordle-keyboard">
-              <div class="wordle-keyboard-row">
-                <button data-key="ㅂ">ㅂ</button>
-                <button data-key="ㅈ">ㅈ</button>
-                <button data-key="ㄷ">ㄷ</button>
-                <button data-key="ㄱ">ㄱ</button>
-                <button data-key="ㅅ">ㅅ</button>
-                <button data-key="ㅛ">ㅛ</button>
-                <button data-key="ㅕ">ㅕ</button>
-                <button data-key="ㅑ">ㅑ</button>
-                <button id="backspace-key" data-key="←">←</button>
-              </div>
-              <div class="wordle-keyboard-row">
-                <button data-key="ㅁ">ㅁ</button>
-                <button data-key="ㄴ">ㄴ</button>
-                <button data-key="ㅇ">ㅇ</button>
-                <button data-key="ㄹ">ㄹ</button>
-                <button data-key="ㅎ">ㅎ</button>
-                <button data-key="ㅗ">ㅗ</button>
-                <button data-key="ㅓ">ㅓ</button>
-                <button data-key="ㅏ">ㅏ</button>
-                <button data-key="ㅣ">ㅣ</button>
-              </div>
-              <div class="wordle-keyboard-row">
-                <button data-key="ㅋ">ㅋ</button>
-                <button data-key="ㅌ">ㅌ</button>
-                <button data-key="ㅊ">ㅊ</button>
-                <button data-key="ㅍ">ㅍ</button>
-                <button data-key="ㅠ">ㅠ</button>
-                <button data-key="ㅜ">ㅜ</button>
-                <button data-key="ㅡ">ㅡ</button>
-                <button id="enter-key" data-key="↵">입력</button>
+            <div class="wordle-board-wrap">
+              <div class="wordle-board"></div>
+            </div>
+            <div class="wordle-keyboard-wrap">
+              <div class="wordle-keyboard">
+                <div class="wordle-keyboard-row">
+                  <button data-key="ㅂ">ㅂ</button>
+                  <button data-key="ㅈ">ㅈ</button>
+                  <button data-key="ㄷ">ㄷ</button>
+                  <button data-key="ㄱ">ㄱ</button>
+                  <button data-key="ㅅ">ㅅ</button>
+                  <button data-key="ㅛ">ㅛ</button>
+                  <button data-key="ㅕ">ㅕ</button>
+                  <button data-key="ㅑ">ㅑ</button>
+                  <button id="backspace-key" data-key="←">←</button>
+                </div>
+                <div class="wordle-keyboard-row">
+                  <button data-key="ㅁ">ㅁ</button>
+                  <button data-key="ㄴ">ㄴ</button>
+                  <button data-key="ㅇ">ㅇ</button>
+                  <button data-key="ㄹ">ㄹ</button>
+                  <button data-key="ㅎ">ㅎ</button>
+                  <button data-key="ㅗ">ㅗ</button>
+                  <button data-key="ㅓ">ㅓ</button>
+                  <button data-key="ㅏ">ㅏ</button>
+                  <button data-key="ㅣ">ㅣ</button>
+                </div>
+                <div class="wordle-keyboard-row">
+                  <button data-key="ㅋ">ㅋ</button>
+                  <button data-key="ㅌ">ㅌ</button>
+                  <button data-key="ㅊ">ㅊ</button>
+                  <button data-key="ㅍ">ㅍ</button>
+                  <button data-key="ㅠ">ㅠ</button>
+                  <button data-key="ㅜ">ㅜ</button>
+                  <button data-key="ㅡ">ㅡ</button>
+                  <button id="enter-key" data-key="↵">입력</button>
+                </div>
               </div>
             </div>
           </div>
@@ -75,7 +79,7 @@
               정답 <span class="answer"></span> SCORE
               <span class="score">100</span>
             </p>
-            <a href="#" class="btn_again"
+            <a href="" class="btn_again"
               >다시하기 <i class="fa-solid fa-arrow-rotate-right"></i
             ></a>
           </div>
