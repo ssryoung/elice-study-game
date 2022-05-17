@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <div class="title" onclick="location.href='/index.html';">
+      <div class="title" onclick="window.location.href='/index.html';">
         <div>
           <p>이상한 나라의 게임</p>
         </div>
@@ -128,7 +128,7 @@ start 버튼을 눌러 룰렛을 돌리세요!
   ];
 
   let helpBoxEl = document.querySelector(".help-box");
-  let currentUrl = location.href.split("/");
+  let currentUrl = window.location.href.split("/");
 
   currentUrl = currentUrl[currentUrl.length - 1];
 
