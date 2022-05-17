@@ -60,6 +60,7 @@ class Roulette {
         result.style.display = "block";
 
         retryBtn.addEventListener("click", () => {
+          retryBtn.href = "#";
           left.style.backgroundColor = "white";
           left.style.opacity = 1;
           right.style.backgroundColor = "white";
