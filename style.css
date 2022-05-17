@@ -3,7 +3,12 @@
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/Yeongdo-Rg.woff")
     format("woff");
 }
-
+@font-face {
+  font-family: 'CookieRun-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --colorShadeA: #b18597;
   --colorShadeB: #f9c4d2;
@@ -27,8 +32,7 @@
 .buttonWrap {
   width: 65%;
   height: 45%;
-  margin: 0 auto;
-  margin-top: 80px;
+  margin: 10px auto;
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,8 +49,8 @@ button {
   font-weight: 700;
 }
 button.gameButton {
-  padding: 1em 1em;
-  border: 2px solid var(--colorShadeA);
+  padding: .5em .5em;
+  /* border: 2px solid var(--colorShadeA); */
   border-radius: 1em;
   /* border-radius: 50%; */
   background: var(--colorShadeE);
@@ -64,7 +68,7 @@ button.gameButton::before {
   bottom: 0;
   background: var(--colorShadeC);
   border-radius: inherit;
-  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+  box-shadow: 0 0 0 0 var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
   transform: translate3d(0, 0.75em, -1em);
   transition: all 100ms cubic-bezier(0, 0, 1, 1);
 }
@@ -81,6 +85,25 @@ button.gameButton:active {
 button.gameButton:active::before {
   transform: translate3d(0, 0, -1em);
   box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+}
+button.gameButton img {
+  width:100%;
+  height:100%;
+  border-radius: inherit;
+}
+button.gameButton .gameTitle {
+  position:absolute;
+  left:-5%;
+  top:-5%;
+  transform: rotate(-25deg);
+  text-align: center;
+  color:rgb(0, 0, 0);
+  text-shadow: -3px 0px white, 0px 3px white, 3px 0px white, 0px -3px white;
+  font-size: 30px;
+  font-family: CookieRun-Regular;
+}
+button.gameButton:hover .gameTitle {
+  color:rgb(86, 48, 175);
 }
 .madeButton {
   position: fixed;
