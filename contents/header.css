@@ -101,7 +101,7 @@
   position: fixed;
   top: 27px;
   right: 100px;
-  z-index: 999;
+  z-index: 999999;
 }
 #help > a {
   font-size: 35px;
@@ -111,18 +111,26 @@
 #help > a:hover {
   color: rgb(82, 79, 161);
 }
-.help-box {
+.help-box-wrap .darkBG {
+  width:100%;
+  height:100%;
+  position:fixed;
+  margin-top:-100px;
+  z-index: 99999;
+  background-color: rgba(0,0,0,.6);
+}
+.help-box-wrap .help-box {
   display: inline-block;
   position:fixed;
-  z-index: 99999;
+  z-index: 999999;
   right:140px;
   top:70px;
   padding: 30px;
-  background-color: rgb(195 186 233);
+  background-color: rgb(219, 214, 245);
   border-radius: 30px 0 30px 30px;
   color: black;
   font-size: 20px;
-  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 .no-box {
   display: none;

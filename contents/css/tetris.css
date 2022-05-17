@@ -9,7 +9,6 @@ td {
   margin-top: 20px;
 }
 #gameField {
-  float: left;
   width: 100%;
   height: 100%;
 }
@@ -19,6 +18,11 @@ td {
   margin-top: 1.9px;
   margin-left: 3px;
   width: 100px;
+}
+#scoreField #nextTable {
+  position: relative;
+  margin: 0 auto;
+  padding: 13px 0;
 }
 #score,
 #level {
@@ -46,16 +50,11 @@ td {
   padding: 10px;
   margin: 0px;
 }
-#nextTable {
-  position: absolute;
-  left: 663px;
-  top: 280px;
-}
 #pause,
 #gameover {
+  display: none;
   position: absolute;
   left: 200px;
   top: 200px;
-  visibility: hidden;
-  color: white;
+  color: rgb(255, 255, 255);
 }
