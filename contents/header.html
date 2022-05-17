@@ -136,7 +136,7 @@ start 버튼을 눌러 룰렛을 돌리세요!
   console.log("currentUrl : ", currentUrl);
 
   Url.forEach((value, index) => {
-    if (value === currentUrl) {
+    if (value === currentUrl || value + "#" === currentUrl) {
       let renderHelp = helpHTML[index];
       console.log(renderHelp);
 
