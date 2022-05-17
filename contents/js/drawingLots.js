@@ -11,13 +11,15 @@ let ul = document.getElementsByClassName("lot_list")[0];
 let result_modal = document.getElementsByClassName("result")[0];
 let replay = document.getElementsByClassName("again_btn")[0];
 let result_content = document.getElementsByClassName("result_content")[0];
+let back = document.getElementsByClassName("background")[0];
 
-
-
+// 사람수줄이기
 function ppMinus(){
-  if(peopleNum > 1){
+  if(peopleNum > 2){
     peopleNum = parseInt(peopleNum)-1;
     document.getElementsByClassName("people")[0].innerHTML = peopleNum;
+    bumbNum=peopleNum-1;
+    document.getElementsByClassName("bumb")[0].innerHTML=bumbNum;
 
     let newPeople = document.getElementsByClassName("lot")[peopleNum];
     ul.removeChild(newPeople); 
@@ -27,10 +29,13 @@ function ppMinus(){
   }
     
 }
+// 사람수늘리기
 function ppPlus(){
   if(peopleNum<10){
     peopleNum=parseInt(peopleNum)+1;
     document.getElementsByClassName("people")[0].innerHTML=peopleNum;
+    bumbNum=peopleNum-1;
+    document.getElementsByClassName("bumb")[0].innerHTML=bumbNum;
                 
     let newPeople = document.createElement('li');
     newPeople.setAttribute('class', 'lot');
@@ -59,7 +64,7 @@ function bbMinus(){
     
 }
 function bbPlus(){
-  if(bumbNum<10){
+  if(bumbNum<10 && peopleNum-1>bumbNum){
     bumbNum=parseInt(bumbNum)+1;
     document.getElementsByClassName("bumb")[0].innerHTML=bumbNum;
   }
@@ -68,17 +73,14 @@ function bbPlus(){
   }
 }
 
-function modal(){
-  result_modal.style.display='block';
-  result_content.innerHTML=`결과 내용`
-}
-
+// replay버튼 새로고침하기
 function remove_modal(){
   location.reload();
 }
-
+let arr=[];
+// 결과
 function changeImg(){
-  var arr=[];
+  
   for(i=0; i<bumbNum;i++){
     a=Math.floor(Math.random()*peopleNum)
     while(arr.includes(a)){
@@ -87,9 +89,11 @@ function changeImg(){
     arr.push(a);   
   }
   for(i=0; i<peopleNum;i++){
+    
     if(arr.indexOf(i)>-1){
       img[i].className+=" bombImg";
-      lotResult[i].innerHTML=`${i+1}번   당첨!`
+      lotResult[i].innerHTML=`${i+1}번   꽝!`
+    
 
     }
     else{
@@ -98,7 +102,18 @@ function changeImg(){
     }
         
   }
-  setInterval(modal,1500);
+  setTimeout(modal, 2500);
+  
+}
+
+// 모달창
+function modal(){
+  arr.sort()
+  result_arr=[]
+  arr.forEach(i=>{result_arr.push(i+1+"번")})
+  back.style.display='block';
+  
+  result_content.innerHTML+=`<h2>${result_arr} 꽝!!!</h2>`
 }
 
 peopleMinus.addEventListener("click",ppMinus);

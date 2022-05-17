@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'IM_Hyemin-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .game-box {
   overflow: hidden;
   position: fixed;
@@ -86,12 +93,14 @@ li{
 }
 .lotImg{
   content:url("/contents/img/drawingLotDefault.png");
+  animation: diddle-diddle 2s infinite both;
 }
 .passImg{
   content:url("/contents/img/drawingLotPass.png");
 }
 .bombImg{
   content:url("/contents/img/drawingLotBomb.png");
+  animation: none;
 }
 .lotResult{
   height: 10px;
@@ -100,5 +109,57 @@ li{
 }
 .result_content{
   height:170px;
+  font-size: 20px;
+  
+  color: black;
+  animation: sizeanimation 1s infinite ease-in-out;
+  font-family: 'IM_Hyemin-Bold';
+}
+.result_modal{
+  content:url("/contents/img/Crying.gif");
+  height:120px;
+  width:120px;
+}
+
+@keyframes sizeanimation {
+  from {
+      transform: scale(1.0);
+  }
+  to {
+      transform: scale(1.1);
+  }
+}
+.again_btn{
+  background-color: rgb(195 186 233);
+  color: rgb(64, 55, 107);
+  border-radius: 5px;
+  width:200px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+@keyframes diddle-diddle {
+  50% {
+      transform: translateX(2px) rotate(-1.2deg)
+  }
+
+  100% {
+      transform: translateX(-2px) rotate(1.2deg)
+  } 
+}
+.background{
+  width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+
+    /*modal-window를 화면 정중앙에 만들기 위해*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
