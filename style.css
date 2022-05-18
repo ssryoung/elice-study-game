@@ -107,6 +107,12 @@ button.gameButton .gameTitle {
 button.gameButton:hover .gameTitle {
   color:rgb(86, 48, 175);
 }
+.downloadButton {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  
+}
 .madeButton {
   position: fixed;
   right: 30px;
