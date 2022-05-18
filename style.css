@@ -32,11 +32,11 @@
 .buttonWrap {
   width: 65%;
   height: 45%;
-  margin: 10px auto;
+  margin: 1.5% auto;
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 100px;
+  gap: 70px;
 }
 button {
   cursor: pointer;
@@ -49,6 +49,8 @@ button {
   font-weight: 700;
 }
 button.gameButton {
+  width: 90%;
+  height: 80%;
   padding: .5em .5em;
   /* border: 2px solid var(--colorShadeA); */
   border-radius: 1em;
