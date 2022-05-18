@@ -111,7 +111,13 @@ button.gameButton:hover .gameTitle {
   position: fixed;
   left: 30px;
   bottom: 30px;
-  
+  font-size: 30px;
+  background-color: white;
+  border-radius: 50%;
+  text-decoration: none;
+}
+.downloadButton:hover {
+  font-size: 35px;
 }
 .madeButton {
   position: fixed;
