@@ -110,7 +110,6 @@ class Roulette {
 }
 
 const r = new Roulette();
-
 let panel = document.querySelector(".roulette-image");
 let btn = document.querySelector(".roulette-btn");
 let result = document.querySelector(".result");
