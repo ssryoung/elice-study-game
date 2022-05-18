@@ -169,6 +169,7 @@ function keyDownEventHandler(e) {
       break;
   }
 }
+
 document.onkeyup = keyUpEventHandler;
 function keyUpEventHandler(e) {
   if (e.keyCode == 40) moveSlow();
@@ -415,12 +416,13 @@ function displayCombo(combo, finalScore) {
 function gameOver() {
   clearTimeout(movingThread);
   initExistField();
-  alert("[Game Over]\nLevel: " + level + "\nScore: " + score);
+  alert("[Game Over]\nLevel: "+level+"\nScore: "+score);
   document.getElementById("gameField").style.visibility = "hidden";
   document.getElementById("gameover").style.visibility = "visible";
   document.getElementById("sub_ft").style.visibility = "visible";
 }
-function pause() {
+
+function pause(e) {
   if (isPaused) {
     movingThread = setTimeout("moveDown()", movingSpeed);
     document.getElementById("pause").style.visibility = "hidden";
