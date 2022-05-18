@@ -16,7 +16,6 @@ td {
   float: right;
   background-color: rgb(108, 93, 182);
   margin-top: 1.9px;
-  margin-left: 3px;
   width: 100px;
 }
 #scoreField #nextTable {
@@ -52,9 +51,14 @@ td {
 }
 #pause,
 #gameover {
-  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
-  left: 200px;
-  top: 200px;
-  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  visibility: hidden;
+  color: rgb(108, 93, 182);
 }
