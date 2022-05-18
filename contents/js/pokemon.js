@@ -9,9 +9,13 @@ const resultBox = document.querySelector("#pokeResultBox");
 const replayBtn = document.querySelector("#btnAgain");
 const pokeGetBox = document.querySelector("#pokeGetBox");
 const btnConfirm = document.querySelector("#btnConfirm");
-
+const modal = document.querySelector(".modal");
+const btnOpenPopup = document.querySelector(".btn-open-popup");
+const pokeBook = document.querySelector("#pokemonBook");
+let countPokemon = 0;
 let nIntervalId; //인터벌의 id값을 저장할 변수
 let imageIndex = 0;
+let score = document.getElementById("score");
 
 const objRock = {
   name: "rock",
@@ -211,6 +215,7 @@ function getPokemon() {
     getPoke + 1
   }.gif`;
   pokeGetBox.querySelector("span").innerHTML = `${pokemonName.names[getPoke]}`;
+  score.innerHTML = ++countPokemon;
   return getPoke; // 배열인덱스
 }
 
@@ -242,28 +247,27 @@ function checkScore(resultLog) {
 //가위바위보 구현
 //스타트 버튼이 눌리면 함수 실행
 
-function playRSP(e) {
+async function playRSP(e) {
   //sound재생
   //todo RANDOM값으로 이미지 변경
+  console.log(nIntervalId);
   if (nIntervalId) {
-    stopChangeImage(); //버튼이 눌리면 멈춤
+    await stopChangeImage(); //버튼이 눌리면 멈춤
     let pcHand = src[Math.floor(Math.random() * 3)];
     let value = this.event.target.getAttribute("value");
-    let objUser = returnRSP(value);
+    let objUser = await returnRSP(value);
     const resultYou = resultBox.querySelector("#resultYou");
     const resultPc = resultBox.querySelector("#resultPc");
 
-    comImg.src = `../img/${pcHand}.gif`; //선택된 컴퓨터 이미지로 출력
+    comImg.src = await `../img/${pcHand}.gif`; //선택된 컴퓨터 이미지로 출력
 
-    console.log("pc : " + pcHand);
-    console.log("userHand :" + objUser[pcHand]);
-
-    resultYou.src = `/contents/img/${objUser.name}.gif`;
-    resultPc.src = `/contents/img/${pcHand}.gif`;
+    resultYou.src = await `/contents/img/${objUser.name}.gif`;
+    resultPc.src = await `/contents/img/${pcHand}.gif`;
     //1 : 승리 0 : 무승부 -1 : 패배
     if (objUser[pcHand] === 1) {
       checkScore("You Win!!");
       let number = getPokemon();
+      console.log(countPokemon);
       setPokemonBook(number);
     } else if (objUser[pcHand] === 0) {
       checkScore("Draw~~");
@@ -294,9 +298,9 @@ function changeImage() {
   }
 }
 
-function stopChangeImage() {
+async function stopChangeImage() {
   //인터벌 아이디가 존재한다면 인터벌 아이디 삭제
-  clearInterval(nIntervalId);
+  await clearInterval(nIntervalId);
   nIntervalId = null;
 }
 
@@ -336,7 +340,7 @@ for (let i = 0; i < 151; i++) {
 //효과음 재생하는 함수
 
 function playSound() {
-  soundElem.src = "/contents/sound/pop.mp3";
+  soundElem.src = "../sound/pop.mp3";
   soundElem.play();
 
   if (soundElem.paused) {
@@ -367,10 +371,6 @@ function stopChangeImage() {
   nIntervalId = null;
 }
 
-const modal = document.querySelector(".modal");
-const btnOpenPopup = document.querySelector(".btn-open-popup");
-const pokeBook = document.querySelector("#pokemonBook");
-
 function setPokemonBook(number) {
   console.log("number", number);
   const classPokemon = document.getElementsByClassName("pokemon")[number];
@@ -385,12 +385,13 @@ btnOpenPopup.addEventListener("click", () => {
   pokeBook.style.display = "block";
 });
 
-replayBtn.addEventListener("click", () => {
+replayBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
   pokeGetBox.style.display = "none";
-  playRSP();
 });
 
-btnConfirm.addEventListener("click", () => {
+btnConfirm.addEventListener("click", async (e) => {
+  e.preventDefault();
   resultBox.style.display = "none";
-  playRSP();
+  await playRSP();
 });

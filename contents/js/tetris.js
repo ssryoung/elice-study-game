@@ -421,6 +421,7 @@ function gameOver() {
   document.getElementById("gameover").style.visibility = "visible";
   document.getElementById("sub_ft").style.visibility = "visible";
 }
+
 function pause(e) {
   if (isPaused) {
     movingThread = setTimeout("moveDown()", movingSpeed);

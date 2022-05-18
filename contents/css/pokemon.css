@@ -22,13 +22,14 @@
 }
 /* comPanel */
 #comPanel {
+  margin-top: 5%;
   height: 30%;
   display: inherit;
   justify-content: center;
   align-items: center;
 }
 #comPanel img {
-  max-width: 80%;
+  max-width: 70%;
   height: auto;
 }
 
@@ -58,7 +59,7 @@
 #scissors {
   background-color: white;
   border-radius: 3em;
-  transform: scale(0.6);
+  transform: scale(0.5);
   border: none;
 }
 
@@ -121,13 +122,13 @@
   border-radius: 20px;
   transition: 0.2s;
 }
-.modal .btn_again .btn_start:hover {
+.modal .btn_start:hover {
   background-color: rgb(82, 79, 161);
 }
-.modal .btn_again .btn_star:hover i {
+.modal .btn_start:hover i {
   transition: 0.2s;
 }
-.modal .btn_again .btn_star:hover i {
+.modal .btn_start:hover i {
   transform: rotate(180deg);
 }
 
@@ -273,10 +274,53 @@
 .result#pokeGetBox img {
   width: 80px;
   height: 80px;
-  transform: scale(1.2);
+  transform: scale(1.1);
   margin: 20px;
 }
 
 .result#pokeGetBox span {
   color: rgb(250, 186, 252);
+}
+
+.btn-open-popup {
+  background-color: rgb(195 186 233);
+  color: white;
+  border: dashed 3px;
+  border-radius: 25px;
+  width: auto;
+  height: 50px;
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.btn-open-popup.btn-open-popup:hover {
+  color: rgb(195 186 233);
+  background-color: white;
+  transition: all 0.3s;
+  transform: scale(1.05);
+}
+.result #btnConfirm:hover {
+  background-color: rgb(82, 79, 161);
+}
+
+.result #btnConfirm:hover i {
+  animation: none;
+  animation-name: upDown;
+  animation-duration: 0.3s;
+}
+
+@-webkit-keyframes upDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

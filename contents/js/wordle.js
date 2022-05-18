@@ -6,7 +6,6 @@ const winOrLose = result.firstElementChild;
 const resAnswer = document.querySelector(".answer");
 const score = document.querySelector(".score");
 const btnAgain = document.querySelector(".btn_again");
-
 // global 변수
 let gameEndFlg = false;
 let gameWinFlg = false;
@@ -497,3 +496,4 @@ document.addEventListener("keydown", handleKeydown);
 
 // 다시하기 버튼 이벤트
 btnAgain.addEventListener("click", minigameInit);
+// howl

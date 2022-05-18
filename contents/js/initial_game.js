@@ -1,3 +1,4 @@
+console.log(currentTime);
 let quiz = [
   {
     hint: "힌트없음",
@@ -124,55 +125,54 @@ function startGame(e) {
   function hideStartBox() {
     startBox.style.display = "none";
   }
-  hideStartBox()
+  hideStartBox();
 
-  let hintArea = document.querySelector(".hint")
-  let initial = document.querySelector(".initial")
-  let answerResult = document.querySelector(".answer-result")
+  let hintArea = document.querySelector(".hint");
+  let initial = document.querySelector(".initial");
+  let answerResult = document.querySelector(".answer-result");
   let answer = document.querySelector(".answer");
-  let result = document.querySelector(".result")
-  let questionNum = document.querySelector(".questionNum")
+  let result = document.querySelector(".result");
+  let questionNum = document.querySelector(".questionNum");
 
   // 점수 반영
-  let scoreNum = document.querySelector(".score-num")
-  let judgeYou = document.querySelector(".judgeYou")
-  let resultScoreNum = document.querySelector(".result-score-num")
-  let score = 0
-  scoreNum.innerText = score
-  
+  let scoreNum = document.querySelector(".score-num");
+  let judgeYou = document.querySelector(".judgeYou");
+  let resultScoreNum = document.querySelector(".result-score-num");
+  let score = 0;
+  scoreNum.innerText = score;
+
   let count = 0;
-  let countArr = []
-  let quizNum = 10
-  
+  let countArr = [];
+  let quizNum = 10;
+
   // 결과 모달창
   function resultBox() {
-    resultScoreNum.innerText = score
-    if(score<=30){
-      judgeYou.innerHTML = "Oops..."
-    }
-    else if(score>30 && score<=60){
-      judgeYou.innerHTML = "Try Again?"
-    }
-    else if(score>60 && score<=90){
-      judgeYou.innerHTML = "Well Done!"
-    }
-    else if(score===100){
-      judgeYou.innerHTML = "Awesome!!"
-      judgeYou.className = "awesome"
+    resultScoreNum.innerText = score;
+    if (score <= 30) {
+      judgeYou.innerHTML = "Oops...";
+    } else if (score > 30 && score <= 60) {
+      judgeYou.innerHTML = "Try Again?";
+    } else if (score > 60 && score <= 90) {
+      judgeYou.innerHTML = "Well Done!";
+    } else if (score === 100) {
+      judgeYou.innerHTML = "Awesome!!";
+      judgeYou.className = "awesome";
       setTimeout(() => {
-        RestartConfetti()
-      },1500)
+        RestartConfetti();
+      }, 1500);
     }
   }
 
   // 문제 번호
-  questionNum.innerHTML = `Quiz <span style="font-weight:bold">${count+1}</span>`
+  questionNum.innerHTML = `Quiz <span style="font-weight:bold">${
+    count + 1
+  }</span>`;
 
   // 문제 랜덤 추출
-  for(let i=0; i<quizNum; i++){
-    let randomNum = Math.floor(Math.random()*quiz.length)
-    if(countArr.indexOf(randomNum) === -1) countArr.push(randomNum) // 중복x
-    else i--
+  for (let i = 0; i < quizNum; i++) {
+    let randomNum = Math.floor(Math.random() * quiz.length);
+    if (countArr.indexOf(randomNum) === -1) countArr.push(randomNum); // 중복x
+    else i--;
   }
 
   hintArea.innerText = quiz[countArr[count]].hint;
@@ -181,127 +181,141 @@ function startGame(e) {
   // 카운트다운
   let timer = document.querySelector(".timer-num");
   let time = 4;
-  let myTimer = setInterval(countDown, 1000)
-  function countDown(){
-    if(time>0){
-      timer.innerText = time
-      time--
-    }
-    else if(time === 0) {
+  let myTimer = setInterval(countDown, 1000);
+  function countDown() {
+    if (time > 0) {
+      timer.innerText = time;
+      time--;
+    } else if (time === 0) {
       timer.innerText = 0;
       showAnswer();
       setTimeout(() => {
-        nextQuiz()
-        if(count===quizNum){
-          result.style.display = "block"
-          resultBox()
+        nextQuiz();
+        if (count === quizNum) {
+          result.style.display = "block";
+          resultBox();
         }
-      }, 1500)
+      }, 1500);
     }
   }
 
   // 제출버튼 클릭 이벤트
   let submit = document.querySelector(".submit");
-  submit.addEventListener("click", submitClick)
+  submit.addEventListener("click", submitClick);
   // answer.addEventListener("click", countDown)
 
-
-  function submitClick(e){
+  function submitClick(e) {
     e.preventDefault();
-    playGame()
+    playGame();
   }
 
   // time === 0 일시 답안 노출
-  function showAnswer(){
+  function showAnswer() {
     hintArea.innerText = quiz[countArr[count]].hint;
     initial.innerText = quiz[countArr[count]].initial;
-    questionNum.innerHTML = `Quiz <span style="font-weight:bold">${count+1}</span>`
-    
-    answerResult.innerHTML = `정답 : <span style="font-weight:bold; color:red">${quiz[countArr[count]].answer}</span>`
-    answerResult.style.display = "block"
+    questionNum.innerHTML = `Quiz <span style="font-weight:bold">${
+      count + 1
+    }</span>`;
+
+    answerResult.innerHTML = `정답 : <span style="font-weight:bold; color:red">${
+      quiz[countArr[count]].answer
+    }</span>`;
+    answerResult.style.display = "block";
     answer.disabled = true;
     submit.disabled = true;
 
-    count++
-    window.clearInterval(myTimer)
-
-    
+    count++;
+    window.clearInterval(myTimer);
   }
 
   // 답안 제출시 하단 텍스트 노출
-  function submitAnswer(){
-    if(answer.value === quiz[countArr[count]].answer && count<quizNum) {
-      answerResult.innerHTML = `"<span style="font-weight:bold; color:blue">${quiz[countArr[count]].answer}</span>" 정답!`
-      answerResult.style.display = "block"
-      score += 10
-      scoreNum.innerHTML = score
-      window.clearInterval(myTimer)
+  function submitAnswer() {
+    if (answer.value === quiz[countArr[count]].answer && count < quizNum) {
+      answerResult.innerHTML = `"<span style="font-weight:bold; color:blue">${
+        quiz[countArr[count]].answer
+      }</span>" 정답!`;
+      answerResult.style.display = "block";
+      score += 10;
+      scoreNum.innerHTML = score;
+      window.clearInterval(myTimer);
       answer.disabled = true;
       submit.disabled = true;
-    }
-    else if(answer.value !== quiz[countArr[count]].answer && count<quizNum){
-      answerResult.innerHTML = `정답 : <span style="font-weight:bold; color:red">${quiz[countArr[count]].answer}</span>`
-      answerResult.style.display = "block"
-      window.clearInterval(myTimer)
+    } else if (
+      answer.value !== quiz[countArr[count]].answer &&
+      count < quizNum
+    ) {
+      answerResult.innerHTML = `정답 : <span style="font-weight:bold; color:red">${
+        quiz[countArr[count]].answer
+      }</span>`;
+      answerResult.style.display = "block";
+      window.clearInterval(myTimer);
       answer.disabled = true;
       submit.disabled = true;
     }
     // 마지막문제 후 모달창 display:block
-    else if(answer.value === quiz[countArr[count]].answer && count===quizNum) {
-      answerResult.innerHTML = `"<span style="font-weight:bold; color:blue">${quiz[countArr[count]].answer}</span>" 정답!`
-      answerResult.style.display = "block"
-      score += 10
-      scoreNum.innerHTML = score
-      window.clearInterval(myTimer)
-      result.style.display = "block"
+    else if (
+      answer.value === quiz[countArr[count]].answer &&
+      count === quizNum
+    ) {
+      answerResult.innerHTML = `"<span style="font-weight:bold; color:blue">${
+        quiz[countArr[count]].answer
+      }</span>" 정답!`;
+      answerResult.style.display = "block";
+      score += 10;
+      scoreNum.innerHTML = score;
+      window.clearInterval(myTimer);
+      result.style.display = "block";
       answer.disabled = true;
       submit.disabled = true;
-    }
-    else if(answer.value !== quiz[countArr[count]].answer && count===quizNum){
-      answerResult.innerHTML = `정답 : <span style="font-weight:bold"; color:red">${quiz[countArr[count]].answer}</span>`
-      answerResult.style.display = "block"
-      window.clearInterval(myTimer)
-      result.style.display = "block"
+    } else if (
+      answer.value !== quiz[countArr[count]].answer &&
+      count === quizNum
+    ) {
+      answerResult.innerHTML = `정답 : <span style="font-weight:bold"; color:red">${
+        quiz[countArr[count]].answer
+      }</span>`;
+      answerResult.style.display = "block";
+      window.clearInterval(myTimer);
+      result.style.display = "block";
       answer.disabled = true;
       submit.disabled = true;
     }
 
     // 결과 모달창
-    resultBox()
+    resultBox();
   }
-  
+
   // 노출된 답안 숨김, 카운트다운 리셋
-  function nextQuiz(){
-    if(count<quizNum){
+  function nextQuiz() {
+    if (count < quizNum) {
       hintArea.innerText = quiz[countArr[count]].hint;
       initial.innerText = quiz[countArr[count]].initial;
-      questionNum.innerHTML = `Quiz <span style="font-weight:bold">${count+1}</span>`
-      
-      answerResult.style.display = "none"
-      answer.value = ""
-      answer.disabled = false
-      answer.focus()
-      submit.disabled = false
+      questionNum.innerHTML = `Quiz <span style="font-weight:bold">${
+        count + 1
+      }</span>`;
 
-      timer.innerText = 5
-      time = 4
-      window.clearInterval(myTimer)
-      myTimer = window.setInterval(countDown, 1000)
-    }
-    else result.style.display = "block"
+      answerResult.style.display = "none";
+      answer.value = "";
+      answer.disabled = false;
+      answer.focus();
+      submit.disabled = false;
+
+      timer.innerText = 5;
+      time = 4;
+      window.clearInterval(myTimer);
+      myTimer = window.setInterval(countDown, 1000);
+    } else result.style.display = "block";
   }
 
   // playGame
-  function playGame(){
-    submitAnswer()
+  function playGame() {
+    submitAnswer();
     // 답안 노출 후 숨기고 다음문제까지 1.5초
     setTimeout(() => {
-      if(count<quizNum) count++
-      nextQuiz()
-    }, 1500)
+      if (count < quizNum) count++;
+      nextQuiz();
+    }, 1500);
   }
-  
-
 
   //꽃가루 이펙트 / 출처 : https://kmkblog.tistory.com/292?category=1065511
   var canvas;
@@ -321,199 +335,245 @@ function startGame(e) {
   // objects
 
   var particleColors = {
-      colorOptions: ["DodgerBlue", "OliveDrab", "Gold", "pink", "SlateBlue", "lightblue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"],
-      colorIndex: 0,
-      colorIncrementer: 0,
-      colorThreshold: 10,
-      getColor: function () {
-          if (this.colorIncrementer >= 10) {
-              this.colorIncrementer = 0;
-              this.colorIndex++;
-              if (this.colorIndex >= this.colorOptions.length) {
-                  this.colorIndex = 0;
-              }
-          }
-          this.colorIncrementer++;
-          return this.colorOptions[this.colorIndex];
+    colorOptions: [
+      "DodgerBlue",
+      "OliveDrab",
+      "Gold",
+      "pink",
+      "SlateBlue",
+      "lightblue",
+      "Violet",
+      "PaleGreen",
+      "SteelBlue",
+      "SandyBrown",
+      "Chocolate",
+      "Crimson",
+    ],
+    colorIndex: 0,
+    colorIncrementer: 0,
+    colorThreshold: 10,
+    getColor: function () {
+      if (this.colorIncrementer >= 10) {
+        this.colorIncrementer = 0;
+        this.colorIndex++;
+        if (this.colorIndex >= this.colorOptions.length) {
+          this.colorIndex = 0;
+        }
       }
-  }
+      this.colorIncrementer++;
+      return this.colorOptions[this.colorIndex];
+    },
+  };
 
   function confettiParticle(color) {
-      this.x = Math.random() * W; // x-coordinate
-      this.y = (Math.random() * H) - H; //y-coordinate
-      this.r = RandomFromTo(10, 15); //radius;
-      this.d = (Math.random() * mp) + 10; //density;
-      this.color = color;
-      this.tilt = Math.floor(Math.random() * 10) - 10;
-      this.tiltAngleIncremental = (Math.random() * 0.07) + .05;
-      this.tiltAngle = 0;
+    this.x = Math.random() * W; // x-coordinate
+    this.y = Math.random() * H - H; //y-coordinate
+    this.r = RandomFromTo(10, 15); //radius;
+    this.d = Math.random() * mp + 10; //density;
+    this.color = color;
+    this.tilt = Math.floor(Math.random() * 10) - 10;
+    this.tiltAngleIncremental = Math.random() * 0.07 + 0.05;
+    this.tiltAngle = 0;
 
-      this.draw = function () {
-          ctx.beginPath();
-          ctx.lineWidth = this.r / 2;
-          ctx.strokeStyle = this.color;
-          ctx.moveTo(this.x + this.tilt + (this.r / 4), this.y);
-          ctx.lineTo(this.x + this.tilt, this.y + this.tilt + (this.r / 4));
-          return ctx.stroke();
-      }
+    this.draw = function () {
+      ctx.beginPath();
+      ctx.lineWidth = this.r / 2;
+      ctx.strokeStyle = this.color;
+      ctx.moveTo(this.x + this.tilt + this.r / 4, this.y);
+      ctx.lineTo(this.x + this.tilt, this.y + this.tilt + this.r / 4);
+      return ctx.stroke();
+    };
   }
 
   $(document).ready(function () {
-      SetGlobals();
-      // InitializeButton();
-      //InitializeConfetti();
+    SetGlobals();
+    // InitializeButton();
+    //InitializeConfetti();
 
-      $(window).resize(function () {
-          W = window.innerWidth;
-          H = window.innerHeight;
-          canvas.width = W;
-          canvas.height = H;
-      });
-
+    $(window).resize(function () {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
+    });
   });
 
   function SetGlobals() {
-      canvas = document.getElementById("canvas");
-      ctx = canvas.getContext("2d");
-      W = window.innerWidth;
-      H = window.innerHeight;
-      canvas.width = W;
-      canvas.height = H;
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("2d");
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
   }
 
   function InitializeConfetti() {
-      particles = [];
-      animationComplete = false;
-      for (var i = 0; i < mp; i++) {
-          var particleColor = particleColors.getColor();
-          particles.push(new confettiParticle(particleColor));
-      }
-      StartConfetti();
+    particles = [];
+    animationComplete = false;
+    for (var i = 0; i < mp; i++) {
+      var particleColor = particleColors.getColor();
+      particles.push(new confettiParticle(particleColor));
+    }
+    StartConfetti();
   }
 
   function Draw() {
-      ctx.clearRect(0, 0, W, H);
-      var results = [];
-      for (var i = 0; i < mp; i++) {
-          (function (j) {
-              results.push(particles[j].draw());
-          })(i);
-      }
-      Update();
+    ctx.clearRect(0, 0, W, H);
+    var results = [];
+    for (var i = 0; i < mp; i++) {
+      (function (j) {
+        results.push(particles[j].draw());
+      })(i);
+    }
+    Update();
 
-      return results;
+    return results;
   }
 
   function RandomFromTo(from, to) {
-      return Math.floor(Math.random() * (to - from + 1) + from);
+    return Math.floor(Math.random() * (to - from + 1) + from);
   }
 
-
   function Update() {
-      var remainingFlakes = 0;
-      var particle;
-      angle += 0.01;
-      tiltAngle += 0.1;
+    var remainingFlakes = 0;
+    var particle;
+    angle += 0.01;
+    tiltAngle += 0.1;
 
-      for (var i = 0; i < mp; i++) {
-          particle = particles[i];
-          if (animationComplete) return;
+    for (var i = 0; i < mp; i++) {
+      particle = particles[i];
+      if (animationComplete) return;
 
-          if (!confettiActive && particle.y < -15) {
-              particle.y = H + 100;
-              continue;
-          }
-
-          stepParticle(particle, i);
-
-          if (particle.y <= H) {
-              remainingFlakes++;
-          }
-          CheckForReposition(particle, i);
+      if (!confettiActive && particle.y < -15) {
+        particle.y = H + 100;
+        continue;
       }
 
-      if (remainingFlakes === 0) {
-          StopConfetti();
+      stepParticle(particle, i);
+
+      if (particle.y <= H) {
+        remainingFlakes++;
       }
+      CheckForReposition(particle, i);
+    }
+
+    if (remainingFlakes === 0) {
+      StopConfetti();
+    }
   }
 
   function CheckForReposition(particle, index) {
-      if ((particle.x > W + 20 || particle.x < -20 || particle.y > H) && confettiActive) {
-          if (index % 5 > 0 || index % 2 == 0) //66.67% of the flakes
-          {
-              repositionParticle(particle, Math.random() * W, -10, Math.floor(Math.random() * 10) - 20);
-          } else {
-              if (Math.sin(angle) > 0) {
-                  //Enter from the left
-                  repositionParticle(particle, -20, Math.random() * H, Math.floor(Math.random() * 10) - 20);
-              } else {
-                  //Enter from the right
-                  repositionParticle(particle, W + 20, Math.random() * H, Math.floor(Math.random() * 10) - 20);
-              }
-          }
+    if (
+      (particle.x > W + 20 || particle.x < -20 || particle.y > H) &&
+      confettiActive
+    ) {
+      if (index % 5 > 0 || index % 2 == 0) {
+        //66.67% of the flakes
+        repositionParticle(
+          particle,
+          Math.random() * W,
+          -10,
+          Math.floor(Math.random() * 10) - 20
+        );
+      } else {
+        if (Math.sin(angle) > 0) {
+          //Enter from the left
+          repositionParticle(
+            particle,
+            -20,
+            Math.random() * H,
+            Math.floor(Math.random() * 10) - 20
+          );
+        } else {
+          //Enter from the right
+          repositionParticle(
+            particle,
+            W + 20,
+            Math.random() * H,
+            Math.floor(Math.random() * 10) - 20
+          );
+        }
       }
+    }
   }
   function stepParticle(particle, particleIndex) {
-      particle.tiltAngle += particle.tiltAngleIncremental;
-      particle.y += (Math.cos(angle + particle.d) + 3 + particle.r / 2) / 2;
-      particle.x += Math.sin(angle);
-      particle.tilt = (Math.sin(particle.tiltAngle - (particleIndex / 3))) * 15;
+    particle.tiltAngle += particle.tiltAngleIncremental;
+    particle.y += (Math.cos(angle + particle.d) + 3 + particle.r / 2) / 2;
+    particle.x += Math.sin(angle);
+    particle.tilt = Math.sin(particle.tiltAngle - particleIndex / 3) * 15;
   }
 
   function repositionParticle(particle, xCoordinate, yCoordinate, tilt) {
-      particle.x = xCoordinate;
-      particle.y = yCoordinate;
-      particle.tilt = tilt;
+    particle.x = xCoordinate;
+    particle.y = yCoordinate;
+    particle.tilt = tilt;
   }
 
   function StartConfetti() {
-      W = window.innerWidth;
-      H = window.innerHeight;
-      canvas.width = W;
-      canvas.height = H;
-      (function animloop() {
-          if (animationComplete) return null;
-          animationHandler = requestAnimFrame(animloop);
-          return Draw();
-      })();
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
+    (function animloop() {
+      if (animationComplete) return null;
+      animationHandler = requestAnimFrame(animloop);
+      return Draw();
+    })();
   }
 
   function ClearTimers() {
-      clearTimeout(reactivationTimerHandler);
-      clearTimeout(animationHandler);
+    clearTimeout(reactivationTimerHandler);
+    clearTimeout(animationHandler);
   }
 
   function DeactivateConfetti() {
-      confettiActive = false;
-      ClearTimers();
+    confettiActive = false;
+    ClearTimers();
   }
 
   function StopConfetti() {
-      animationComplete = true;
-      if (ctx == undefined) return;
-      ctx.clearRect(0, 0, W, H);
+    animationComplete = true;
+    if (ctx == undefined) return;
+    ctx.clearRect(0, 0, W, H);
   }
 
   function RestartConfetti() {
-      ClearTimers();
-      StopConfetti();
-      reactivationTimerHandler = setTimeout(function () {
-          confettiActive = true;
-          animationComplete = false;
-          InitializeConfetti();
-      }, 100);
-
+    ClearTimers();
+    StopConfetti();
+    reactivationTimerHandler = setTimeout(function () {
+      confettiActive = true;
+      animationComplete = false;
+      InitializeConfetti();
+    }, 100);
   }
 
   window.requestAnimFrame = (function () {
-      return window.requestAnimationFrame || 
-      window.webkitRequestAnimationFrame || 
-      window.mozRequestAnimationFrame || 
-      window.oRequestAnimationFrame || 
-      window.msRequestAnimationFrame || 
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
       function (callback) {
-          return window.setTimeout(callback, 1000 / 60);
-      };
+        return window.setTimeout(callback, 1000 / 60);
+      }
+    );
   })();
-
 }
+
+///////////배경음악코드
+// howl
+const music = new Howl({
+  src: "/contents/sound/cute_wiggling_baby.mp3",
+  autoplay: true,
+  volume: 1,
+  loop: true,
+});
+music.seek(currentTime);
+music.play();
+
+const aTag = document.querySelector("a");
+aTag.addEventListener("click", () => {
+  const time = music.seek();
+  localStorage.setItem("audioCurrentTime", time);
+});
