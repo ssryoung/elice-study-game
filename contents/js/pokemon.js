@@ -336,7 +336,7 @@ for (let i = 0; i < 151; i++) {
 //효과음 재생하는 함수
 
 function playSound() {
-  soundElem.src = "/contents/sound/pop.mp3";
+  soundElem.src = "../sound/pop.mp3";
   soundElem.play();
 
   if (soundElem.paused) {
@@ -385,12 +385,14 @@ btnOpenPopup.addEventListener("click", () => {
   pokeBook.style.display = "block";
 });
 
-replayBtn.addEventListener("click", () => {
+replayBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   pokeGetBox.style.display = "none";
   playRSP();
 });
 
-btnConfirm.addEventListener("click", () => {
+btnConfirm.addEventListener("click", (e) => {
+  e.preventDefault();
   resultBox.style.display = "none";
   playRSP();
 });
