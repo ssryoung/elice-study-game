@@ -308,9 +308,9 @@
 }
 
 .result #btnConfirm:hover i {
-  animation: none;
   animation-name: upDown;
-  animation-duration: 0.3s;
+  animation-duration: 0.2s;
+  transform: none;
 }
 
 @-webkit-keyframes upDown {
@@ -318,7 +318,7 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   100% {
     transform: translateY(0px);
