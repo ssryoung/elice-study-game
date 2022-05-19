@@ -110,25 +110,6 @@ function modal() {
   result_content.innerHTML += `<h2>${result_arr} 꽝!!!</h2>`;
 }
 
-///////////배경음악코드
-console.log(currentTime);
-
-// howl
-const music = new Howl({
-  src: "/contents/sound/cute_wiggling_baby.mp3",
-  autoplay: true,
-  volume: 1,
-  loop: true,
-});
-music.seek(currentTime);
-music.play();
-
-const aTag = document.querySelector("a");
-aTag.addEventListener("click", () => {
-  const time = music.seek();
-  localStorage.setItem("audioCurrentTime", time);
-});
-
 peopleMinus.addEventListener("click", ppMinus);
 peoplePlus.addEventListener("click", ppPlus);
 bumbMinus.addEventListener("click", bbMinus);
