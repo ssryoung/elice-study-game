@@ -36,10 +36,10 @@
               <img src="" id="resultYou">
               <span id="vs">vs</span>
               <img src="" id="resultPc">
-              <span>PC</span>
+              <span>Pc</span>
             </div>
-            <a href="" class="btn_again" id="btnConfirm"
-              > 확인 <i class="fa-solid fa-check"></i></i
+            <a href="#" class="btn_again" id="btnConfirm"
+              >확인 <i class="fa-solid fa-arrow-rotate-right"></i
             ></a>
           </div>
 
@@ -48,7 +48,7 @@
             <div id="resultLog">
               <img src=""/>
             </div>
-            <a href="" class="btn_again" id="btnAgain"
+            <a href="#" class="btn_again" id="btnAgain"
               >다시하기 <i class="fa-solid fa-arrow-rotate-right"></i
             ></a>
           </div>
@@ -60,7 +60,14 @@
               <p>포켓몬을 모아 <br />세계 최고의 트레이너가 되어보세요!</p>
               <img src="/contents/img/sprites/25.gif" / >
               <button class="btn_start" id="btnStart">start!</button>
-           
+              <script>
+                const btnStart = document.querySelector("#btnStart");
+                btnStart.addEventListener("click", () => {
+                  const notice = document.querySelector("#modal_notice");
+                  notice.style.display = "none";
+                  playRSP();
+                });
+              </script>
             </div>
           </div>
 
@@ -83,11 +90,8 @@
 
           <div id="pokemon">
           <div id="scoreBoard">    
-          <button class="btn-open-popup"><spa>
-            포켓몬 도감보기
-          </spa></button>
-          <p> Pokemon [<span id="score">0</span>/151]
-          </p>
+          <button class="btn-open-popup">포켓몬 도감보기</button>
+            <span id="score">[0/151]</span>
             </div>
           <div id="comPanel">
               <div class="name_wrapper">
@@ -99,7 +103,7 @@
             <!-- TODO vs 화면과 나레이션 문구만들기 -->
           <div id="vsPanel">
               <p id="vs">vs</p>
-              <span id="npc">넌 내꺼야!</span>
+              <span id="npc">가위바위보 승리하면 포켓몬 한마리를 드려요!</span>
           </div>
             <!-- //end vsPanel -->
 
@@ -144,7 +148,7 @@
               </button>
               <!-- </form> -->
               <!-- audio -->
-              <audio id="sound" src="/contents/sound/pop.mp3" volume="1"></audio>
+              <audio id="sound" src="/contents/pop.mp3" volume="1"></audio>
 
         
               </button>
@@ -168,12 +172,5 @@
         ></a>
       </footer>
     </div>
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
-    integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script src="/index.js"></script>
   </body>
 </html>
