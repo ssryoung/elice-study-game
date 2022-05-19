@@ -560,20 +560,3 @@ function startGame(e) {
     );
   })();
 }
-
-///////////배경음악코드
-// howl
-const music = new Howl({
-  src: "/contents/sound/cute_wiggling_baby.mp3",
-  autoplay: true,
-  volume: 1,
-  loop: true,
-});
-music.seek(currentTime);
-music.play();
-
-const aTag = document.querySelector("a");
-aTag.addEventListener("click", () => {
-  const time = music.seek();
-  localStorage.setItem("audioCurrentTime", time);
-});
