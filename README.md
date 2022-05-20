@@ -14,7 +14,7 @@
 # [Made by]
 [세령](https://github.com/ssryoung)
 [예정](https://github.com/bananana0118)
-[다윤](https://github.com/onurleft)
+[다윤](https://github.com/many-yun)
 [지환](https://github.com/shinbian11)
 [우람](https://github.com/jibmusae)
 [은지](https://github.com/dmswldmswl)
